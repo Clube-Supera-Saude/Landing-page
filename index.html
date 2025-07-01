@@ -239,7 +239,7 @@
             box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
         }
 
-        /* Hero Section - APENAS IMAGEM */
+        /* Hero Section - RESPONSIVO MELHORADO */
         .hero {
             min-height: 100vh;
             background: url('https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg');
@@ -251,6 +251,9 @@
             overflow: hidden;
             cursor: pointer;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Área clicável invisível para o botão "Associe-se" */
@@ -1127,7 +1130,7 @@
             cursor: pointer;
         }
 
-        /* Responsive Design - LAYOUT LADO A LADO PRESERVADO NO MOBILE */
+        /* Responsive Design - HERO OTIMIZADO PARA MOBILE */
         @media (max-width: 768px) {
             body {
                 width: 100%;
@@ -1168,12 +1171,16 @@
                 font-size: 0.8rem;
             }
 
-            /* Hero mobile - ESPAÇAMENTO REDUZIDO */
+            /* Hero mobile - OTIMIZADO PARA MOBILE */
             .hero {
                 background-attachment: scroll;
-                min-height: 80vh;
+                min-height: 100vh;
                 background-size: cover;
-                background-position: center;
+                background-position: center center;
+                background-image: url('https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg');
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .associe-se-area {
@@ -1489,7 +1496,7 @@
                 margin: 15px 0;
             }
             
-                        .nav-menu a {
+            .nav-menu a {
                 font-size: 1.1rem;
                 padding: 10px 20px;
                 border-radius: 20px;
@@ -1511,14 +1518,17 @@
         }
 
         @media (max-width: 480px) {
-            /* Extra small mobile - LAYOUT LADO A LADO AINDA MAIS COMPACTO */
+            /* Extra small mobile - HERO AINDA MAIS OTIMIZADO */
             .container {
                 padding: 0 10px;
             }
 
-            /* Hero - MAIS COMPACTO */
+            /* Hero - PERFEITO PARA MOBILE PEQUENO */
             .hero {
-                min-height: 70vh;
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
             }
 
             .associe-se-area {
@@ -1635,6 +1645,19 @@
             }
         }
 
+        /* Landscape Mobile - OTIMIZAÇÃO ESPECIAL */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center center;
+            }
+
+            .associe-se-area {
+                bottom: 10%;
+            }
+        }
+
         /* Ripple Animation */
         @keyframes ripple {
             to {
@@ -1678,7 +1701,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - APENAS IMAGEM -->
+    <!-- Hero Section - OTIMIZADO PARA MOBILE -->
     <section class="hero" id="hero">
         <!-- Área clicável invisível para o botão "Associe-se" -->
         <div class="associe-se-area" id="associe-se-btn"></div>
@@ -2084,10 +2107,10 @@
         const phoneInput = document.getElementById('phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\D/g, '');
+                let value = e.target.value.replace(/\\D/g, '');
                 if (value.length > 11) value = value.slice(0, 11);
-                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                value = value.replace(/^(\\d{2})(\\d)/g, '($1) $2');
+                value = value.replace(/(\\d)(\\d{4})$/, '$1-$2');
                 e.target.value = value;
             });
         }
@@ -2215,7 +2238,7 @@
         });
 
         // Counter Animation
-        function animateCounters() {
+               function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
             const speed = 150;
 
