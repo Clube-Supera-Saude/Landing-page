@@ -191,6 +191,7 @@
             padding: 8px;
             box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
             transition: transform 0.3s ease;
+            object-fit: contain;
         }
 
         .logo-img:hover {
@@ -270,10 +271,16 @@
             box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
         }
 
-        /* Hero Section */
+        /* Hero Section - ATUALIZADO COM NOVA IMAGEM */
         .hero {
             min-height: 100vh;
-            background: var(--gradient-primary);
+            background: 
+                linear-gradient(135deg, rgba(26, 31, 76, 0.8) 0%, rgba(44, 58, 122, 0.7) 50%, rgba(26, 31, 76, 0.8) 100%),
+                url('https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: var(--white);
             display: flex;
             align-items: center;
@@ -289,9 +296,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(184, 134, 11, 0.15) 0%, transparent 50%);
             animation: gradientShift 8s ease-in-out infinite;
         }
 
@@ -302,12 +309,22 @@
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 1fr;
+            gap: 40px;
             align-items: center;
             position: relative;
             z-index: 2;
             padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-text {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 25px;
+            border: 2px solid rgba(184, 134, 11, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .hero-text h1 {
@@ -315,7 +332,7 @@
             font-weight: 900;
             margin-bottom: 2rem;
             line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-text .highlight {
@@ -337,23 +354,7 @@
             opacity: 0.95;
             font-weight: 400;
             line-height: 1.6;
-        }
-
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 25px;
-            box-shadow: var(--shadow-hover);
-            transition: transform 0.3s ease;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.02);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .floating-elements {
@@ -369,6 +370,7 @@
             color: var(--accent-gold);
             opacity: 0.6;
             animation: floatIcon 4s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
@@ -387,7 +389,7 @@
             border-radius: 25px;
             display: inline-block;
             margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -428,6 +430,7 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .whatsapp-btn {
@@ -444,7 +447,7 @@
             gap: 15px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -466,7 +469,7 @@
 
         .whatsapp-btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
         }
 
         .whatsapp-btn i {
@@ -494,7 +497,7 @@
             gap: 12px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -516,7 +519,7 @@
 
         .cta-button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.4);
+            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.6);
         }
 
         /* Contact Form Section */
@@ -1224,9 +1227,11 @@
             }
             
             .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 50px;
+                padding: 100px 0 60px;
+            }
+            
+            .hero-text {
+                padding: 40px 30px;
             }
             
             .hero-text h1 {
@@ -1309,6 +1314,11 @@
             .nav-menu a:hover {
                 background: rgba(184, 134, 11, 0.2);
             }
+
+            /* Hero mobile adjustments */
+            .hero {
+                background-attachment: scroll;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1332,6 +1342,10 @@
             .form-container {
                 padding: 30px 20px;
             }
+
+            .hero-text {
+                padding: 30px 20px;
+            }
         }
 
         /* Ripple Animation */
@@ -1347,7 +1361,7 @@
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-content">
-            <div class="loader-logo"></div>
+                        <div class="loader-logo"></div>
             <h3>Carregando...</h3>
         </div>
     </div>
@@ -1360,7 +1374,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="https://i.imgur.com/6BoFl3H.png" alt="Logo Clube Supera Saúde" class="logo-img">
+                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png" alt="Logo Clube Supera Saúde" class="logo-img">
                     <div class="logo-text">Clube Supera Saúde</div>
                 </div>
                 <nav>
@@ -1382,7 +1396,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="floating-elements">
-                        <div class="floating-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="floating-icon"><i class="fas fa-heartbeat"></i></div>
             <div class="floating-icon"><i class="fas fa-pills"></i></div>
             <div class="floating-icon"><i class="fas fa-user-md"></i></div>
             <div class="floating-icon"><i class="fas fa-stethoscope"></i></div>
@@ -1390,7 +1404,7 @@
         
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
                     <h1>Saúde <span class="highlight">Premium</span> para Toda sua Família</h1>
                     <p>Mais de 500 parceiros ativos em todo Brasil. Descontos de até 90% em farmácias, 70% em exames e muito mais!</p>
                     
@@ -1400,7 +1414,7 @@
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="https://wa.me/5511996076495?text=Olá! Quero conhecer o Clube Supera Saúde" class="whatsapp-btn" target="_blank">
+                        <a href="https://wa.me/5511996076495?text=Olá! Quero conhecer o Clube Supera Saúde" class="whatsapp-btn" >
                             <i class="fab fa-whatsapp"></i>
                             Falar no WhatsApp
                         </a>
@@ -1409,9 +1423,6 @@
                             Solicitar Contato
                         </a>
                     </div>
-                </div>
-                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Família feliz e saudável" />
                 </div>
             </div>
         </div>
@@ -1541,7 +1552,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
                         <i class="fas fa-star"></i>
                         Contratar Agora
                     </a>
@@ -1558,7 +1569,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
                         <i class="fab fa-whatsapp"></i>
                         Contratar Agora
                     </a>
@@ -1575,7 +1586,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
                         <i class="fas fa-crown"></i>
                         Contratar Agora
                     </a>
@@ -1617,7 +1628,7 @@
                 </div>
                 
                 <div>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
                         <i class="fab fa-whatsapp"></i>
                         Aderir Agora
                     </a>
@@ -1661,7 +1672,7 @@
                     <p><a href="#benefits"><i class="fas fa-heart" style="margin-right: 8px;"></i> Benefícios</a></p>
                     <p><a href="#pricing"><i class="fas fa-tags" style="margin-right: 8px;"></i> Planos e Preços</a></p>
                     <p><a href="#testimonials"><i class="fas fa-comments" style="margin-right: 8px;"></i> Depoimentos</a></p>
-                    <p><a href="https://clubesuperasaude.com.br" target="_blank"><i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Site Oficial</a></p>
+                    <p><a href="https://clubesuperasaude.com.br" ><i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Site Oficial</a></p>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
                     <h3>Principais Parceiros</h3>
@@ -1683,7 +1694,7 @@
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" target="_blank">
+    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" >
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1883,7 +1894,6 @@
         }
 
         // Intersection Observer for Counter Animation
-                // Intersection Observer for Counter Animation
         const statsSection = document.querySelector('.stats');
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1987,8 +1997,8 @@
 
         // Preload critical images
         const preloadImages = [
-            'https://i.imgur.com/6BoFl3H.png',
-            'https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png',
+            'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg'
         ];
 
         preloadImages.forEach(src => {
