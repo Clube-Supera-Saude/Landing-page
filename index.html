@@ -270,7 +270,7 @@
             transform: translateX(-50%) scale(1.05);
         }
 
-        /* NOVA SEÇÃO - Informações Detalhadas com Médico */
+        /* NOVA SEÇÃO - Informações com Médico SOBREPOSTO */
         .detailed-info {
             background: var(--white);
             padding: 80px 0;
@@ -279,44 +279,53 @@
         }
 
         .detailed-info-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            position: relative;
             width: 100%;
+            min-height: 500px;
+        }
+
+        .doctor-image-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(26, 31, 76, 0.15);
         }
 
         .doctor-image {
-            position: relative;
             width: 100%;
-        }
-
-        .doctor-image img {
-            width: 100%;
-            height: 500px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(26, 31, 76, 0.15);
+            object-position: center;
             transition: transform 0.3s ease;
         }
 
-        .doctor-image img:hover {
+        .doctor-image:hover {
             transform: scale(1.02);
         }
 
-        .info-content {
-            background: var(--white);
-            padding: 40px;
+        /* Card de informações sobreposto */
+        .info-overlay {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.1);
+            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.2);
             border-left: 5px solid var(--accent-gold);
-            width: 100%;
+            max-width: 350px;
+            width: calc(100% - 60px);
+            z-index: 10;
         }
 
-        .info-content h2 {
-            font-size: 2.5rem;
+        .info-overlay h2 {
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -331,11 +340,11 @@
         }
 
         .info-list li {
-            padding: 15px 0;
-            font-size: 1.1rem;
+            padding: 12px 0;
+            font-size: 1rem;
             color: var(--text-dark);
             position: relative;
-            padding-left: 40px;
+            padding-left: 35px;
             border-bottom: 1px solid #f0f0f0;
             transition: all 0.3s ease;
         }
@@ -348,23 +357,22 @@
             content: '✓';
             position: absolute;
             left: 0;
-            top: 15px;
+            top: 12px;
             color: var(--accent-gold);
             font-weight: bold;
-            font-size: 1.3rem;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             background: rgba(184, 134, 11, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .info-list li:hover {
             background: rgba(184, 134, 11, 0.05);
-            padding-left: 45px;
+            padding-left: 40px;
         }
 
         .info-list li strong {
@@ -1165,13 +1173,14 @@
                 font-size: 0.7rem;
             }
 
-            /* Hero mobile - OTIMIZADO */
+            /* Hero mobile - CORRIGIDO */
             .hero {
                 background-attachment: scroll;
-                min-height: 70vh;
+                min-height: 100vh;
                 background-size: cover;
-                background-position: center;
-                width: 100%;
+                background-position: center top;
+                /* Ajuste específico para mobile */
+                background-image: url('https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg');
             }
 
             .associe-se-area {
@@ -1180,41 +1189,49 @@
                 height: 50px;
             }
 
-            /* Detailed Info Mobile - MUITO MENOR */
+            /* Detailed Info Mobile - LAYOUT SOBREPOSTO ADAPTADO */
             .detailed-info {
                 padding: 30px 0;
                 width: 100%;
             }
 
             .detailed-info-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                min-height: 300px;
+                width: 100%;
+            }
+
+            .doctor-image-container {
+                height: 300px;
                 width: 100%;
             }
 
             .doctor-image {
                 width: 100%;
-            }
-
-            .doctor-image img {
-                height: 200px;
+                height: 100%;
                 object-fit: cover;
-                object-position: center;
-                width: 100%;
+                object-position: center top;
             }
 
-            .info-content {
-                padding: 15px;
-                width: 100%;
+            /* Card sobreposto adaptado para mobile */
+            .info-overlay {
+                position: static;
+                transform: none;
+                margin-top: -50px;
+                margin-left: 10px;
+                margin-right: 10px;
+                max-width: none;
+                width: calc(100% - 20px);
+                padding: 20px;
+                z-index: 20;
             }
 
-            .info-content h2 {
+            .info-overlay h2 {
                 font-size: 1.3rem;
                 margin-bottom: 1rem;
             }
 
             .info-list li {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 padding: 8px 0;
                 padding-left: 25px;
             }
@@ -1473,7 +1490,7 @@
                 left: 0;
             }
             
-            .nav-menu li {
+                        .nav-menu li {
                 margin: 10px 0;
             }
             
@@ -1500,12 +1517,13 @@
 
         @media (max-width: 430px) {
             /* Extra small mobile - AINDA MENOR */
-                        .container {
+            .container {
                 padding: 0 8px;
             }
 
             .hero {
-                min-height: 60vh;
+                min-height: 100vh;
+                background-position: center top;
             }
 
             .associe-se-area {
@@ -1518,15 +1536,18 @@
                 padding: 20px 0;
             }
 
-            .doctor-image img {
-                height: 150px;
+            .doctor-image-container {
+                height: 250px;
             }
 
-            .info-content {
-                padding: 10px;
+            .info-overlay {
+                margin-top: -40px;
+                margin-left: 5px;
+                margin-right: 5px;
+                padding: 15px;
             }
 
-            .info-content h2 {
+            .info-overlay h2 {
                 font-size: 1.1rem;
             }
 
@@ -1643,26 +1664,26 @@
         <div class="associe-se-area" id="associe-se-btn"></div>
     </section>
 
-    <!-- NOVA SEÇÃO - Informações Detalhadas com Médico -->
+    <!-- NOVA SEÇÃO - Informações com Médico SOBREPOSTO -->
     <section class="detailed-info" id="detailed-info">
         <div class="container">
             <div class="detailed-info-content" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Imagem do Médico - NOVA IMAGEM -->
-                <div class="doctor-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg" alt="Médico sorridente" loading="lazy">
-                </div>
-                
-                <!-- Informações Detalhadas - TÍTULO ALTERADO -->
-                <div class="info-content" data-aos="fade-left" data-aos-delay="400">
-                    <h2>Seus benefícios com o Clube</h2>
+                <!-- Container da imagem do médico -->
+                <div class="doctor-image-container">
+                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg" alt="Médico sorridente" class="doctor-image" loading="lazy">
                     
-                    <ul class="info-list">
-                        <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
-                        <li><strong>Exames a partir de R$ 5,25</strong></li>
-                        <li><strong>Medicamentos com até 90% de desconto</strong></li>
-                        <li><strong>Odontologia e estética com até 30% de desconto</strong></li>
-                        <li><strong>E muito mais...</strong></li>
-                    </ul>
+                    <!-- Card de informações sobreposto -->
+                    <div class="info-overlay" data-aos="fade-left" data-aos-delay="400">
+                        <h2>Seus benefícios com o Clube</h2>
+                        
+                        <ul class="info-list">
+                            <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
+                            <li><strong>Exames a partir de R$ 5,25</strong></li>
+                            <li><strong>Medicamentos com até 90% de desconto</strong></li>
+                            <li><strong>Odontologia e estética com até 30% de desconto</strong></li>
+                            <li><strong>E muito mais...</strong></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2271,7 +2292,7 @@
         });
 
         // Preload critical images
-                const preloadImages = [
+        const preloadImages = [
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png',
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg',
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg'
@@ -2443,4 +2464,4 @@
         console.log('🚀 Clube Supera Saúde - Landing Page Carregada com Sucesso!');
     </script>
 </body>
-</html>
+</html> 
