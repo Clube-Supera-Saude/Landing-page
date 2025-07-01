@@ -1132,7 +1132,7 @@
             cursor: pointer;
         }
 
-        /* Responsive Design - OTIMIZADO PARA MOBILE */
+        /* Responsive Design - MANTÉM APARÊNCIA DO DESKTOP */
         @media (max-width: 768px) {
             body {
                 width: 100%;
@@ -1141,7 +1141,7 @@
             }
 
             .container {
-                padding: 0 10px;
+                padding: 0 15px;
                 width: 100%;
                 max-width: 100%;
             }
@@ -1161,47 +1161,45 @@
             }
             
             .logo-img {
-                height: 35px;
+                height: 40px;
             }
 
             .logo-text {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .cta-header {
-                padding: 6px 15px;
-                font-size: 0.7rem;
+                padding: 8px 15px;
+                font-size: 0.8rem;
             }
 
-            /* Hero mobile - CORRIGIDO */
+            /* Hero mobile - MANTÉM PROPORÇÃO */
             .hero {
                 background-attachment: scroll;
                 min-height: 100vh;
                 background-size: cover;
-                background-position: center top;
-                /* Ajuste específico para mobile */
-                background-image: url('https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg');
+                background-position: center;
             }
 
             .associe-se-area {
-                bottom: 10%;
-                width: 150px;
-                height: 50px;
+                bottom: 15%;
+                width: 200px;
+                height: 70px;
             }
 
-            /* Detailed Info Mobile - LAYOUT SOBREPOSTO ADAPTADO */
+            /* Detailed Info Mobile - LAYOUT SOBREPOSTO MANTIDO */
             .detailed-info {
-                padding: 30px 0;
+                padding: 60px 0;
                 width: 100%;
             }
 
             .detailed-info-content {
-                min-height: 300px;
+                min-height: 400px;
                 width: 100%;
             }
 
             .doctor-image-container {
-                height: 300px;
+                height: 400px;
                 width: 100%;
             }
 
@@ -1209,117 +1207,116 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: center top;
+                object-position: center;
             }
 
-            /* Card sobreposto adaptado para mobile */
+            /* Card sobreposto - MANTÉM DESIGN DESKTOP */
             .info-overlay {
-                position: static;
-                transform: none;
-                margin-top: -50px;
-                margin-left: 10px;
-                margin-right: 10px;
-                max-width: none;
-                width: calc(100% - 20px);
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                max-width: 280px;
+                width: calc(100% - 30px);
                 padding: 20px;
                 z-index: 20;
             }
 
             .info-overlay h2 {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
             }
 
             .info-list li {
-                font-size: 0.85rem;
-                padding: 8px 0;
-                padding-left: 25px;
+                font-size: 0.9rem;
+                padding: 10px 0;
+                padding-left: 30px;
             }
 
             .info-list li::before {
                 font-size: 0.7rem;
-                width: 18px;
-                height: 18px;
-                top: 8px;
+                width: 20px;
+                height: 20px;
+                top: 10px;
             }
 
-            /* Stats Mobile - MENOR */
+            /* Stats Mobile - PROPORCIONAIS */
             .stats {
-                padding: 25px 0;
+                padding: 50px 0;
                 width: 100%;
             }
 
             .stats-container {
-                padding: 20px 10px;
-                gap: 15px;
+                padding: 30px 20px;
+                gap: 25px;
                 grid-template-columns: repeat(2, 1fr);
                 width: 100%;
             }
 
             .stat-number {
-                font-size: 1.5rem;
-                margin-bottom: 5px;
+                font-size: 2rem;
+                margin-bottom: 8px;
             }
 
             .stat-label {
-                font-size: 0.7rem;
+                font-size: 0.85rem;
             }
 
-            /* Benefits Mobile - MENOR */
+            /* Benefits Mobile - PROPORCIONAIS */
             .benefits {
-                padding: 30px 0;
+                padding: 60px 0;
                 width: 100%;
             }
 
             .benefits h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
 
             .benefits-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
                 width: 100%;
             }
 
             .benefit-card {
-                padding: 15px;
+                padding: 25px;
                 width: 100%;
             }
 
             .benefit-icon {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
 
             .benefit-card h3 {
-                font-size: 1.1rem;
-                margin-bottom: 0.8rem;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
             }
 
             .benefit-card p {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
 
-            /* Pricing Mobile - MENOR */
+            /* Pricing Mobile - PROPORCIONAIS */
             .pricing {
-                padding: 30px 0;
+                padding: 60px 0;
                 width: 100%;
             }
 
             .pricing h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
 
             .pricing-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
                 width: 100%;
             }
 
             .pricing-card {
-                padding: 15px;
+                padding: 25px;
                 width: 100%;
             }
 
@@ -1328,160 +1325,160 @@
             }
 
             .pricing-card.featured:hover {
-                transform: translateY(-5px);
+                transform: translateY(-6px);
             }
 
             .pricing-card .price {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .pricing-card h3 {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .pricing-card li {
-                font-size: 0.75rem;
-                padding: 6px 0;
-                padding-left: 20px;
+                font-size: 0.85rem;
+                padding: 8px 0;
+                padding-left: 25px;
             }
 
             .whatsapp-btn, .cta-button {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-                gap: 5px;
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                gap: 8px;
             }
 
-            /* Testimonials Mobile - MENOR */
+            /* Testimonials Mobile - PROPORCIONAIS */
             .testimonials {
-                padding: 30px 0;
+                padding: 60px 0;
                 width: 100%;
             }
 
             .testimonials h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
 
             .testimonial-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
                 width: 100%;
             }
 
             .testimonial {
-                padding: 15px;
+                padding: 25px;
                 width: 100%;
             }
 
             .testimonial-text {
-                font-size: 0.8rem;
-                margin-bottom: 10px;
+                font-size: 0.9rem;
+                margin-bottom: 15px;
             }
 
             .testimonial-author {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
             }
 
-            /* Final CTA Mobile - MENOR */
+            /* Final CTA Mobile - PROPORCIONAIS */
             .final-cta {
-                padding: 30px 0;
+                padding: 60px 0;
                 width: 100%;
             }
 
             .final-cta h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
                 margin-bottom: 1rem;
             }
 
             .final-cta p {
-                font-size: 0.9rem;
-                margin-bottom: 1.5rem;
+                font-size: 1rem;
+                margin-bottom: 2rem;
             }
 
             .urgency {
-                padding: 15px;
-                margin: 20px 0;
-                font-size: 0.9rem;
+                padding: 20px;
+                margin: 30px 0;
+                font-size: 1rem;
             }
 
-            /* Footer Mobile - MENOR */
+            /* Footer Mobile - PROPORCIONAIS */
             footer {
-                padding: 30px 0 15px;
+                padding: 50px 0 25px;
                 width: 100%;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                margin-bottom: 20px;
+                gap: 30px;
+                margin-bottom: 30px;
                 width: 100%;
             }
 
             .footer-section h3 {
-                font-size: 1rem;
-                margin-bottom: 10px;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
             }
 
             .footer-section p, .footer-section a {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
             }
 
-            /* Modal Mobile - MENOR */
+            /* Modal Mobile - PROPORCIONAIS */
             .modal-content {
-                padding: 20px 15px;
-                margin: 10px;
+                padding: 30px 20px;
+                margin: 15px;
                 max-width: 95%;
                 width: 95%;
             }
 
             .modal-title {
-                font-size: 1.2rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
             }
 
             .modal-subtitle {
-                font-size: 0.75rem;
-                margin-bottom: 1rem;
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
             }
 
             .urgency-banner {
-                padding: 8px;
-                font-size: 0.75rem;
-                margin-bottom: 10px;
+                padding: 10px;
+                font-size: 0.85rem;
+                margin-bottom: 15px;
             }
 
             .form-group {
-                margin-bottom: 12px;
+                margin-bottom: 15px;
             }
 
             .form-group label {
-                font-size: 0.75rem;
-                margin-bottom: 4px;
+                font-size: 0.85rem;
+                margin-bottom: 5px;
             }
 
             .form-group input {
-                padding: 10px 12px;
-                font-size: 0.8rem;
+                padding: 12px 15px;
+                font-size: 0.9rem;
             }
 
             .submit-btn {
-                padding: 12px;
-                font-size: 0.9rem;
-                gap: 5px;
+                padding: 14px;
+                font-size: 1rem;
+                gap: 6px;
             }
 
             /* Navigation Mobile */
             .nav-menu {
                 position: fixed;
-                top: 60px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 60px);
+                height: calc(100vh - 70px);
                 background: var(--gradient-primary);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                padding-top: 30px;
+                padding-top: 40px;
                 transition: left 0.3s ease;
                 z-index: 999;
             }
@@ -1490,14 +1487,14 @@
                 left: 0;
             }
             
-                        .nav-menu li {
-                margin: 10px 0;
+            .nav-menu li {
+                margin: 15px 0;
             }
             
-            .nav-menu a {
-                font-size: 1rem;
-                padding: 8px 15px;
-                border-radius: 15px;
+                        .nav-menu a {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                border-radius: 20px;
                 transition: all 0.3s ease;
             }
             
@@ -1505,113 +1502,111 @@
                 background: rgba(184, 134, 11, 0.2);
             }
 
-            /* Floating WhatsApp Mobile - MENOR */
+            /* Floating WhatsApp Mobile - PROPORCIONAIS */
             .floating-whatsapp {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
-                bottom: 10px;
-                right: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                bottom: 15px;
+                right: 15px;
             }
         }
 
-        @media (max-width: 430px) {
-            /* Extra small mobile - AINDA MENOR */
+        @media (max-width: 480px) {
+            /* Extra small mobile - MANTÉM PROPORÇÕES */
             .container {
-                padding: 0 8px;
+                padding: 0 10px;
             }
 
             .hero {
                 min-height: 100vh;
-                background-position: center top;
             }
 
             .associe-se-area {
-                width: 120px;
-                height: 40px;
-                bottom: 8%;
+                width: 150px;
+                height: 60px;
+                bottom: 12%;
             }
 
             .detailed-info {
-                padding: 20px 0;
+                padding: 40px 0;
             }
 
             .doctor-image-container {
-                height: 250px;
+                height: 350px;
             }
 
             .info-overlay {
-                margin-top: -40px;
-                margin-left: 5px;
-                margin-right: 5px;
+                right: 10px;
+                max-width: 250px;
                 padding: 15px;
             }
 
             .info-overlay h2 {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .info-list li {
-                font-size: 0.75rem;
-                padding: 6px 0;
-                padding-left: 20px;
+                font-size: 0.8rem;
+                padding: 8px 0;
+                padding-left: 25px;
             }
 
             .stats-container {
                 grid-template-columns: 1fr;
-                padding: 15px 8px;
+                padding: 25px 15px;
             }
 
             .stat-number {
-                font-size: 1.3rem;
+                font-size: 1.8rem;
             }
 
             .stat-label {
-                font-size: 0.65rem;
+                font-size: 0.8rem;
             }
 
             .benefits h2, .pricing h2, .testimonials h2, .final-cta h2 {
-                font-size: 1.3rem;
+                font-size: 1.8rem;
             }
 
             .benefit-card, .testimonial, .pricing-card {
-                padding: 12px;
+                padding: 20px;
             }
 
             .benefit-icon {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
             .benefit-card h3 {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .benefit-card p {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
             }
 
             .pricing-card .price {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
             .whatsapp-btn, .cta-button {
-                padding: 6px 12px;
-                font-size: 0.75rem;
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
 
             .modal-content {
-                padding: 15px 10px;
-                margin: 5px;
+                padding: 20px 15px;
+                margin: 10px;
             }
 
             .modal-title {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
 
             .floating-whatsapp {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
             }
         }
 
@@ -1817,7 +1812,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
                         <i class="fas fa-star"></i>
                         Contratar Agora
                     </a>
@@ -1834,7 +1829,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
                         <i class="fab fa-whatsapp"></i>
                         Contratar Agora
                     </a>
@@ -1851,7 +1846,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
                         <i class="fas fa-crown"></i>
                         Contratar Agora
                     </a>
@@ -1893,7 +1888,7 @@
                 </div>
                 
                 <div>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
                         <i class="fab fa-whatsapp"></i>
                         Aderir Agora
                     </a>
@@ -1937,7 +1932,7 @@
                     <p><a href="#benefits"><i class="fas fa-heart" style="margin-right: 6px;"></i> Benefícios</a></p>
                     <p><a href="#pricing"><i class="fas fa-tags" style="margin-right: 6px;"></i> Planos e Preços</a></p>
                     <p><a href="#testimonials"><i class="fas fa-comments" style="margin-right: 6px;"></i> Depoimentos</a></p>
-                    <p><a href="https://clubesuperasaude.com.br" target="_blank"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Site Oficial</a></p>
+                    <p><a href="https://clubesuperasaude.com.br" ><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Site Oficial</a></p>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
                     <h3>Principais Parceiros</h3>
@@ -1959,7 +1954,7 @@
     </footer>
 
     <!-- Floating WhatsApp - REDONDO E MENOR -->
-    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" target="_blank">
+    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" >
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -2464,4 +2459,4 @@
         console.log('🚀 Clube Supera Saúde - Landing Page Carregada com Sucesso!');
     </script>
 </body>
-</html> 
+</html>
