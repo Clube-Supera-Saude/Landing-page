@@ -66,12 +66,15 @@
             color: var(--text-dark);
             overflow-x: hidden;
             scroll-behavior: smooth;
+            width: 100%;
+            max-width: 100vw;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         /* Loading Animation */
@@ -137,6 +140,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         .logo-container {
@@ -246,6 +250,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            width: 100%;
         }
 
         /* Área clicável invisível para o botão "Associe-se" */
@@ -270,6 +275,7 @@
             background: var(--white);
             padding: 80px 0;
             position: relative;
+            width: 100%;
         }
 
         .detailed-info-content {
@@ -277,10 +283,12 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            width: 100%;
         }
 
         .doctor-image {
             position: relative;
+            width: 100%;
         }
 
         .doctor-image img {
@@ -302,6 +310,7 @@
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(26, 31, 76, 0.1);
             border-left: 5px solid var(--accent-gold);
+            width: 100%;
         }
 
         .info-content h2 {
@@ -621,6 +630,7 @@
             padding: 60px 0;
             position: relative;
             z-index: 3;
+            width: 100%;
         }
 
         .stats-container {
@@ -633,6 +643,7 @@
             gap: 40px;
             text-align: center;
             border: 1px solid rgba(184, 134, 11, 0.1);
+            width: 100%;
         }
 
         .stat-item {
@@ -676,6 +687,7 @@
             padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             position: relative;
+            width: 100%;
         }
 
         .benefits h2 {
@@ -708,6 +720,7 @@
             gap: 30px;
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         .benefit-card {
@@ -720,6 +733,7 @@
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .benefit-card:hover {
@@ -759,6 +773,7 @@
             color: var(--white);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .pricing h2 {
@@ -790,6 +805,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         .pricing-card {
@@ -803,6 +819,7 @@
             border: 2px solid rgba(184, 134, 11, 0.2);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .pricing-card::before {
@@ -944,6 +961,7 @@
         .testimonials {
             padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            width: 100%;
         }
 
         .testimonials h2 {
@@ -974,6 +992,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            width: 100%;
         }
 
         .testimonial {
@@ -984,6 +1003,7 @@
             border-left: 5px solid var(--accent-gold);
             transition: all 0.4s ease;
             position: relative;
+            width: 100%;
         }
 
         .testimonial::before {
@@ -1024,6 +1044,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .final-cta-content {
@@ -1060,6 +1081,7 @@
             color: var(--white);
             padding: 60px 0 30px;
             position: relative;
+            width: 100%;
         }
 
         .footer-content {
@@ -1067,6 +1089,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         .footer-section h3 {
@@ -1101,10 +1124,18 @@
             cursor: pointer;
         }
 
-        /* Responsive Design - MELHORADO */
+        /* Responsive Design - OTIMIZADO PARA MOBILE */
         @media (max-width: 768px) {
+            body {
+                width: 100%;
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+
             .container {
-                padding: 0 15px;
+                padding: 0 10px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .nav-menu {
@@ -1116,138 +1147,163 @@
             }
             
             .header-content {
-                flex-wrap: wrap;
-                gap: 15px;
+                flex-wrap: nowrap;
+                gap: 10px;
+                width: 100%;
             }
             
             .logo-img {
-                height: 40px;
+                height: 35px;
             }
 
             .logo-text {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
             }
 
             .cta-header {
-                padding: 8px 20px;
-                font-size: 0.8rem;
+                padding: 6px 15px;
+                font-size: 0.7rem;
             }
 
-            /* Hero mobile adjustments - MELHORADO */
+            /* Hero mobile - OTIMIZADO */
             .hero {
                 background-attachment: scroll;
-                min-height: 100vh;
+                min-height: 70vh;
                 background-size: cover;
-                background-position: center center;
+                background-position: center;
+                width: 100%;
             }
 
             .associe-se-area {
-                bottom: 15%;
-                width: 200px;
-                height: 70px;
+                bottom: 10%;
+                width: 150px;
+                height: 50px;
             }
 
-            /* Detailed Info Mobile - MELHORADO */
+            /* Detailed Info Mobile - MUITO MENOR */
             .detailed-info {
-                padding: 50px 0;
+                padding: 30px 0;
+                width: 100%;
             }
 
             .detailed-info-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .doctor-image {
+                width: 100%;
             }
 
             .doctor-image img {
-                height: 400px;
+                height: 200px;
                 object-fit: cover;
                 object-position: center;
+                width: 100%;
             }
 
             .info-content {
-                padding: 25px;
+                padding: 15px;
+                width: 100%;
             }
 
             .info-content h2 {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .info-list li {
-                font-size: 0.95rem;
-                padding: 12px 0;
-                padding-left: 35px;
-            }
-
-            /* Stats Mobile */
-            .stats {
-                padding: 40px 0;
-            }
-
-            .stats-container {
-                padding: 30px 20px;
-                gap: 25px;
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-number {
-                font-size: 2.2rem;
-                margin-bottom: 8px;
-            }
-
-            .stat-label {
-                font-size: 0.85rem;
-            }
-
-            /* Benefits Mobile */
-            .benefits {
-                padding: 50px 0;
-            }
-
-            .benefits h2 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .benefit-card {
-                padding: 25px;
-            }
-
-            .benefit-icon {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .benefit-card h3 {
                 font-size: 1.3rem;
                 margin-bottom: 1rem;
             }
 
-            .benefit-card p {
-                font-size: 0.9rem;
+            .info-list li {
+                font-size: 0.8rem;
+                padding: 8px 0;
+                padding-left: 25px;
             }
 
-            /* Pricing Mobile */
+            .info-list li::before {
+                font-size: 0.7rem;
+                width: 18px;
+                height: 18px;
+                top: 8px;
+            }
+
+            /* Stats Mobile - MENOR */
+            .stats {
+                padding: 25px 0;
+                width: 100%;
+            }
+
+            .stats-container {
+                padding: 20px 10px;
+                gap: 15px;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            /* Benefits Mobile - MENOR */
+            .benefits {
+                padding: 30px 0;
+                width: 100%;
+            }
+
+            .benefits h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .benefit-card {
+                padding: 15px;
+                width: 100%;
+            }
+
+            .benefit-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .benefit-card p {
+                font-size: 0.8rem;
+            }
+
+            /* Pricing Mobile - MENOR */
             .pricing {
-                padding: 50px 0;
+                padding: 30px 0;
+                width: 100%;
             }
 
             .pricing h2 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .pricing-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
+                width: 100%;
             }
 
             .pricing-card {
-                padding: 25px;
+                padding: 15px;
+                width: 100%;
             }
 
             .pricing-card.featured {
@@ -1255,153 +1311,160 @@
             }
 
             .pricing-card.featured:hover {
-                transform: translateY(-6px);
+                transform: translateY(-5px);
             }
 
             .pricing-card .price {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
 
             .pricing-card h3 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
 
             .pricing-card li {
-                font-size: 0.85rem;
-                padding: 8px 0;
-                padding-left: 25px;
+                font-size: 0.75rem;
+                padding: 6px 0;
+                padding-left: 20px;
             }
 
             .whatsapp-btn, .cta-button {
-                padding: 12px 25px;
-                font-size: 0.95rem;
-                gap: 8px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+                gap: 5px;
             }
 
-            /* Testimonials Mobile */
+            /* Testimonials Mobile - MENOR */
             .testimonials {
-                padding: 50px 0;
+                padding: 30px 0;
+                width: 100%;
             }
 
             .testimonials h2 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .testimonial-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
+                width: 100%;
             }
 
             .testimonial {
-                padding: 25px;
+                padding: 15px;
+                width: 100%;
             }
 
             .testimonial-text {
-                font-size: 0.9rem;
-                margin-bottom: 15px;
+                font-size: 0.8rem;
+                margin-bottom: 10px;
             }
 
             .testimonial-author {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
             }
 
-            /* Final CTA Mobile */
+            /* Final CTA Mobile - MENOR */
             .final-cta {
-                padding: 50px 0;
+                padding: 30px 0;
+                width: 100%;
             }
 
             .final-cta h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 margin-bottom: 1rem;
             }
 
             .final-cta p {
-                font-size: 1rem;
-                margin-bottom: 2rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
             }
 
             .urgency {
-                padding: 20px;
-                margin: 30px 0;
-                font-size: 1rem;
+                padding: 15px;
+                margin: 20px 0;
+                font-size: 0.9rem;
             }
 
-            /* Footer Mobile */
+            /* Footer Mobile - MENOR */
             footer {
-                padding: 40px 0 20px;
+                padding: 30px 0 15px;
+                width: 100%;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 25px;
-                margin-bottom: 25px;
+                gap: 20px;
+                margin-bottom: 20px;
+                width: 100%;
             }
 
             .footer-section h3 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
+                font-size: 1rem;
+                margin-bottom: 10px;
             }
 
             .footer-section p, .footer-section a {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
             }
 
-            /* Modal Mobile */
+            /* Modal Mobile - MENOR */
             .modal-content {
-                padding: 25px 20px;
-                margin: 15px;
+                padding: 20px 15px;
+                margin: 10px;
                 max-width: 95%;
+                width: 95%;
             }
 
             .modal-title {
-                font-size: 1.5rem;
-                margin-bottom: 0.6rem;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
             }
 
             .modal-subtitle {
-                font-size: 0.85rem;
-                margin-bottom: 1.5rem;
+                font-size: 0.75rem;
+                margin-bottom: 1rem;
             }
 
             .urgency-banner {
-                padding: 10px;
-                font-size: 0.85rem;
-                margin-bottom: 15px;
+                padding: 8px;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
             }
 
             .form-group {
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
 
             .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 5px;
+                font-size: 0.75rem;
+                margin-bottom: 4px;
             }
 
             .form-group input {
-                padding: 12px 15px;
-                font-size: 0.9rem;
+                padding: 10px 12px;
+                font-size: 0.8rem;
             }
 
             .submit-btn {
-                padding: 14px;
-                font-size: 1rem;
-                gap: 6px;
+                padding: 12px;
+                font-size: 0.9rem;
+                gap: 5px;
             }
 
             /* Navigation Mobile */
             .nav-menu {
                 position: fixed;
-                top: 70px;
+                top: 60px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
+                height: calc(100vh - 60px);
                 background: var(--gradient-primary);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                padding-top: 40px;
+                padding-top: 30px;
                 transition: left 0.3s ease;
                 z-index: 999;
             }
@@ -1411,13 +1474,13 @@
             }
             
             .nav-menu li {
-                margin: 15px 0;
+                margin: 10px 0;
             }
             
             .nav-menu a {
-                font-size: 1.1rem;
-                padding: 10px 20px;
-                border-radius: 20px;
+                font-size: 1rem;
+                padding: 8px 15px;
+                border-radius: 15px;
                 transition: all 0.3s ease;
             }
             
@@ -1425,100 +1488,109 @@
                 background: rgba(184, 134, 11, 0.2);
             }
 
-            /* Floating WhatsApp Mobile */
+            /* Floating WhatsApp Mobile - MENOR */
             .floating-whatsapp {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-                bottom: 15px;
-                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                bottom: 10px;
+                right: 10px;
             }
         }
 
-        @media (max-width: 480px) {
-            /* Extra small mobile adjustments */
+        @media (max-width: 430px) {
+            /* Extra small mobile - AINDA MENOR */
+                        .container {
+                padding: 0 8px;
+            }
+
             .hero {
-                min-height: 100vh;
-                background-size: cover;
-                background-position: center;
+                min-height: 60vh;
             }
 
             .associe-se-area {
-                width: 180px;
-                height: 60px;
-                bottom: 12%;
+                width: 120px;
+                height: 40px;
+                bottom: 8%;
+            }
+
+            .detailed-info {
+                padding: 20px 0;
+            }
+
+            .doctor-image img {
+                height: 150px;
+            }
+
+            .info-content {
+                padding: 10px;
+            }
+
+            .info-content h2 {
+                font-size: 1.1rem;
+            }
+
+            .info-list li {
+                font-size: 0.75rem;
+                padding: 6px 0;
+                padding-left: 20px;
             }
 
             .stats-container {
                 grid-template-columns: 1fr;
-                padding: 25px 15px;
+                padding: 15px 8px;
             }
 
             .stat-number {
-                font-size: 2rem;
-            }
-
-            .stat-label {
-                font-size: 0.8rem;
-            }
-
-            .benefits h2, .pricing h2, .testimonials h2, .final-cta h2 {
-                font-size: 1.8rem;
-            }
-
-            .benefit-card, .testimonial, .pricing-card {
-                padding: 20px;
-            }
-
-            .benefit-icon {
-                font-size: 2rem;
-            }
-
-            .benefit-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .benefit-card p {
-                font-size: 0.85rem;
-            }
-
-            .pricing-card .price {
-                font-size: 2rem;
-            }
-
-            .whatsapp-btn, .cta-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-
-            .modal-content {
-                padding: 20px 15px;
-            }
-
-            .modal-title {
                 font-size: 1.3rem;
             }
 
-            .detailed-info-content {
-                gap: 20px;
+            .stat-label {
+                font-size: 0.65rem;
             }
 
-            .doctor-image img {
-                height: 350px;
+            .benefits h2, .pricing h2, .testimonials h2, .final-cta h2 {
+                font-size: 1.3rem;
             }
 
-            .info-content {
-                padding: 20px;
+            .benefit-card, .testimonial, .pricing-card {
+                padding: 12px;
             }
 
-            .info-content h2 {
-                font-size: 1.6rem;
+            .benefit-icon {
+                font-size: 1.5rem;
             }
 
-                        .info-list li {
-                font-size: 0.9rem;
-                padding: 10px 0;
-                padding-left: 30px;
+            .benefit-card h3 {
+                font-size: 1rem;
+            }
+
+            .benefit-card p {
+                font-size: 0.75rem;
+            }
+
+            .pricing-card .price {
+                font-size: 1.5rem;
+            }
+
+            .whatsapp-btn, .cta-button {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+
+            .modal-content {
+                padding: 15px 10px;
+                margin: 5px;
+            }
+
+            .modal-title {
+                font-size: 1.1rem;
+            }
+
+            .floating-whatsapp {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
 
@@ -1575,14 +1647,14 @@
     <section class="detailed-info" id="detailed-info">
         <div class="container">
             <div class="detailed-info-content" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Imagem do Médico - NOVA IMAGEM MAIS SIMPÁTICA -->
+                <!-- Imagem do Médico - NOVA IMAGEM -->
                 <div class="doctor-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Médico sorridente" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg" alt="Médico sorridente" loading="lazy">
                 </div>
                 
-                <!-- Informações Detalhadas - SIMPLIFICADAS -->
+                <!-- Informações Detalhadas - TÍTULO ALTERADO -->
                 <div class="info-content" data-aos="fade-left" data-aos-delay="400">
-                    <h2>Seus Benefícios Detalhados</h2>
+                    <h2>Seus benefícios com o Clube</h2>
                     
                     <ul class="info-list">
                         <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
@@ -2199,10 +2271,10 @@
         });
 
         // Preload critical images
-        const preloadImages = [
+                const preloadImages = [
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png',
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg',
-            'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+            'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg'
         ];
 
         preloadImages.forEach(src => {
