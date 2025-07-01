@@ -258,20 +258,133 @@
             cursor: pointer;
         }
 
-        /* Área clicável invisível para o botão "Associe-se" */
+        /* Área clicável invisível para o botão "Associe-se" - REPOSICIONADA */
         .associe-se-area {
             position: absolute;
-            bottom: 15%;
-            right: 8%;
-            width: 200px;
-            height: 80px;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 100px;
             cursor: pointer;
             z-index: 10;
             transition: transform 0.3s ease;
+            /* Para debug - remova depois */
+            /* border: 2px solid red; */
         }
 
         .associe-se-area:hover {
-            transform: scale(1.05);
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        /* Nova seção de informações rápidas */
+        .quick-info {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .quick-info-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .quick-info h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .info-item:hover::before {
+            left: 100%;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-gold);
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .info-item h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .e-muito-mais {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-align: center;
+            margin-top: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         /* Floating WhatsApp - REDONDO */
@@ -305,24 +418,24 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* Modal Pop-up */
+        /* Modal Pop-up - OBRIGATÓRIO */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            display: none;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10000;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.5s ease;
         }
 
-        .modal-overlay.active {
-            display: flex;
+        .modal-overlay.hidden {
+            display: none;
         }
 
         @keyframes fadeIn {
@@ -334,11 +447,12 @@
             background: var(--white);
             padding: 50px;
             border-radius: 25px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
             max-width: 500px;
             width: 90%;
             position: relative;
-            animation: slideUp 0.4s ease;
+            animation: slideUp 0.6s ease;
+            border: 3px solid var(--accent-gold);
         }
 
         @keyframes slideUp {
@@ -362,6 +476,7 @@
             color: #999;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: none; /* Ocultar o X para tornar obrigatório */
         }
 
         .modal-close:hover {
@@ -386,6 +501,23 @@
             margin-bottom: 2.5rem;
             font-size: 1rem;
             opacity: 0.8;
+        }
+
+        .urgency-banner {
+            background: var(--gradient-gold);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: urgencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
 
         .form-group {
@@ -1028,11 +1160,6 @@
             animation: urgencyPulse 2s ease-in-out infinite;
         }
 
-        @keyframes urgencyPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
         /* Footer */
         footer {
             background: var(--primary-blue);
@@ -1096,6 +1223,19 @@
             
             .logo-img {
                 height: 50px;
+            }
+
+            .quick-info h2 {
+                font-size: 2.2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .info-item {
+                padding: 25px;
             }
             
             .stats-container {
@@ -1164,10 +1304,9 @@
             }
 
             .associe-se-area {
-                bottom: 10%;
-                right: 5%;
-                width: 150px;
-                height: 60px;
+                bottom: 15%;
+                width: 250px;
+                height: 80px;
             }
         }
 
@@ -1187,6 +1326,22 @@
 
             .modal-title {
                 font-size: 1.8rem;
+            }
+
+            .quick-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .info-item {
+                padding: 20px;
+            }
+
+            .info-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .info-item p {
+                font-size: 1rem;
             }
         }
 
@@ -1234,20 +1389,63 @@
 
     <!-- Hero Section - APENAS IMAGEM -->
     <section class="hero" id="hero">
-        <!-- Área clicável invisível para o botão "Associe-se" -->
+        <!-- Área clicável invisível para o botão "Associe-se" - REPOSICIONADA -->
         <div class="associe-se-area" id="associe-se-btn"></div>
     </section>
 
-    <!-- Modal Pop-up Formulário -->
+    <!-- Nova Seção de Informações Rápidas -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="quick-info-content" data-aos="fade-up">
+                                <h2>Vantagens Exclusivas</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Consultas a partir de R$ 59,90</h3>
+                        <p>+ retorno gratuito</p>
+                    </div>
+                    
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Exames a partir de R$ 5,25</h3>
+                        <p>Laboratórios credenciados</p>
+                    </div>
+                    
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-pills"></i>
+                        <h3>Medicamentos com até 90% de desconto</h3>
+                        <p>Principais farmácias do Brasil</p>
+                    </div>
+                    
+                    <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-tooth"></i>
+                        <h3>Odontologia e estética com até 30% de desconto</h3>
+                        <p>Tratamentos completos</p>
+                    </div>
+                </div>
+                
+                <div class="e-muito-mais" data-aos="fade-up" data-aos-delay="500">
+                    ✨ E muito mais...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Pop-up Formulário - OBRIGATÓRIO -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" id="modal-close">&times;</button>
             
-            <h2 class="modal-title">Solicite seu Contato Gratuito</h2>
-            <p class="modal-subtitle">Preencha seus dados e nossa equipe entrará em contato para apresentar os melhores planos para sua família</p>
+            <div class="urgency-banner">
+                🚨 ATENÇÃO: Vagas Limitadas para este Mês!
+            </div>
+            
+            <h2 class="modal-title">Garante sua Vaga Agora!</h2>
+            <p class="modal-subtitle">Preencha seus dados para garantir acesso aos melhores descontos em saúde para toda sua família</p>
             
             <div class="form-success" id="form-success">
-                <i class="fas fa-check-circle"></i> Obrigado! Recebemos seus dados e entraremos em contato em breve.
+                <i class="fas fa-check-circle"></i> Parabéns! Seus dados foram enviados. Nossa equipe entrará em contato em breve!
             </div>
             
             <div class="form-error" id="form-error">
@@ -1262,7 +1460,7 @@
                 
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail">
+                    <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail (opcional)">
                 </div>
                 
                 <div class="form-group">
@@ -1271,13 +1469,13 @@
                 </div>
                 
                 <button type="submit" class="submit-btn" id="submit-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    Solicitar Contato Gratuito
+                    <i class="fas fa-rocket"></i>
+                    Garantir Minha Vaga Agora!
                 </button>
             </form>
             
             <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.7; color: var(--text-dark);">
-                <i class="fas fa-lock"></i> Seus dados estão seguros conosco
+                <i class="fas fa-lock"></i> Seus dados estão 100% seguros conosco
             </p>
         </div>
     </div>
@@ -1331,7 +1529,7 @@
                     <h3>Bem-estar</h3>
                     <p>Academias, pilates, spas e atividades físicas com descontos exclusivos</p>
                 </div>
-                                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="benefit-icon">🎓</div>
                     <h3>Educação</h3>
                     <p>Até 87% de desconto em cursos, graduação e pós-graduação nas melhores instituições</p>
@@ -1362,7 +1560,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
                         <i class="fas fa-star"></i>
                         Contratar Agora
                     </a>
@@ -1379,7 +1577,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         Contratar Agora
                     </a>
@@ -1396,7 +1594,7 @@
                         <li>Sem carência</li>
                         <li>Fidelidade 12 meses</li>
                     </ul>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" >
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="cta-button" target="_blank">
                         <i class="fas fa-crown"></i>
                         Contratar Agora
                     </a>
@@ -1438,7 +1636,7 @@
                 </div>
                 
                 <div>
-                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" >
+                    <a href="https://clubesuperasaude.faturasimples.com.br/contratar/familia?custom_vendedor=campanha" class="whatsapp-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         Aderir Agora
                     </a>
@@ -1482,7 +1680,7 @@
                     <p><a href="#benefits"><i class="fas fa-heart" style="margin-right: 8px;"></i> Benefícios</a></p>
                     <p><a href="#pricing"><i class="fas fa-tags" style="margin-right: 8px;"></i> Planos e Preços</a></p>
                     <p><a href="#testimonials"><i class="fas fa-comments" style="margin-right: 8px;"></i> Depoimentos</a></p>
-                    <p><a href="https://clubesuperasaude.com.br" ><i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Site Oficial</a></p>
+                    <p><a href="https://clubesuperasaude.com.br" target="_blank"><i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Site Oficial</a></p>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
                     <h3>Principais Parceiros</h3>
@@ -1504,7 +1702,7 @@
     </footer>
 
     <!-- Floating WhatsApp - REDONDO -->
-    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" >
+    <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1527,6 +1725,8 @@
                 loader.classList.add('hidden');
                 setTimeout(() => {
                     loader.style.display = 'none';
+                    // MOSTRAR MODAL AUTOMATICAMENTE APÓS CARREGAR
+                    showModal();
                 }, 500);
             }, 1500);
         });
@@ -1536,45 +1736,64 @@
         const modalClose = document.getElementById('modal-close');
         const associeSeBtn = document.getElementById('associe-se-btn');
 
-        // Abrir modal quando clicar na área "Associe-se"
-        associeSeBtn.addEventListener('click', function() {
-            modalOverlay.classList.add('active');
+        // Função para mostrar modal
+        function showModal() {
+            modalOverlay.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             
             // Rastreamento
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'associe_se_click', {
-                    event_category: 'button',
-                    event_label: 'hero_associe_se',
+                gtag('event', 'modal_auto_open', {
+                    event_category: 'engagement',
+                    event_label: 'auto_popup',
                     value: 1
                 });
             }
             
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
+                fbq('track', 'ViewContent', {
+                    content_name: 'Lead Form Modal',
+                    content_category: 'Lead Generation'
+                });
+            }
+        }
+
+        // Abrir modal quando clicar na área "Associe-se"
+        associeSeBtn.addEventListener('click', function() {
+            if (modalOverlay.classList.contains('hidden')) {
+                showModal();
+                
+                // Rastreamento específico do botão
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'associe_se_click', {
+                        event_category: 'button',
+                        event_label: 'hero_associe_se',
+                        value: 1
+                    });
+                }
+                
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead');
+                }
             }
         });
 
-        // Fechar modal
+        // Fechar modal (DESABILITADO para tornar obrigatório)
         modalClose.addEventListener('click', function() {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            // Não faz nada - modal obrigatório
+            return false;
         });
 
-        // Fechar modal clicando fora
+        // Desabilitar fechamento clicando fora
         modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            // Não faz nada - modal obrigatório
+            return false;
         });
 
-        // Fechar modal com ESC
+        // Desabilitar fechamento com ESC
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            // Não faz nada - modal obrigatório
+            return false;
         });
 
         // Form Handling - VERSÃO CORRIGIDA
@@ -1651,13 +1870,13 @@
             // Reset button after delay
             setTimeout(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Solicitar Contato Gratuito';
+                submitBtn.innerHTML = '<i class="fas fa-rocket"></i> Garantir Minha Vaga Agora!';
                 
-                // Fechar modal após sucesso
+                // Fechar modal após sucesso e permitir navegação
                 setTimeout(() => {
-                    modalOverlay.classList.remove('active');
+                    modalOverlay.classList.add('hidden');
                     document.body.style.overflow = 'auto';
-                }, 2000);
+                }, 3000);
             }, 3000);
         }
 
@@ -1667,7 +1886,7 @@
             
             // Reset button
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Solicitar Contato Gratuito';
+            submitBtn.innerHTML = '<i class="fas fa-rocket"></i> Garantir Minha Vaga Agora!';
             
             // Scroll to error message
             formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1678,11 +1897,12 @@
             const email = formData.get('email') || 'Não informado';
             const phone = formData.get('phone');
             
-            const message = `🆕 *Novo Lead do Site*%0A%0A` +
+            const message = `🆕 *Novo Lead do Site - VAGA GARANTIDA*%0A%0A` +
                            `👤 *Nome:* ${encodeURIComponent(name)}%0A` +
                            `📧 *Email:* ${encodeURIComponent(email)}%0A` +
                            `📱 *Telefone:* ${encodeURIComponent(phone)}%0A%0A` +
-                           `🌐 *Origem:* Landing Page Clube Supera`;
+                           `🌐 *Origem:* Landing Page Clube Supera%0A` +
+                           `⏰ *Data/Hora:* ${new Date().toLocaleString('pt-BR')}`;
             
             // Opcional: abrir WhatsApp automaticamente
             setTimeout(() => {
