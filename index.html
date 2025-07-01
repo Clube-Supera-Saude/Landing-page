@@ -270,7 +270,7 @@
             transform: translateX(-50%) scale(1.05);
         }
 
-        /* NOVA SEÇÃO - Informações com Médico SOBREPOSTO */
+        /* SEÇÃO - Informações Detalhadas com Médico - LAYOUT ORIGINAL */
         .detailed-info {
             background: var(--white);
             padding: 80px 0;
@@ -279,53 +279,45 @@
         }
 
         .detailed-info-content {
-            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
             width: 100%;
-            min-height: 500px;
-        }
-
-        .doctor-image-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(26, 31, 76, 0.15);
         }
 
         .doctor-image {
+            position: relative;
             width: 100%;
-            height: 100%;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 500px;
             object-fit: cover;
             object-position: center;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(26, 31, 76, 0.15);
             transition: transform 0.3s ease;
         }
 
-        .doctor-image:hover {
+        .doctor-image img:hover {
             transform: scale(1.02);
         }
 
-        /* Card de informações sobreposto */
-        .info-overlay {
-            position: absolute;
-            top: 50%;
-            right: 30px;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 30px;
+        .info-content {
+            background: var(--white);
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.2);
+            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.1);
             border-left: 5px solid var(--accent-gold);
-            max-width: 350px;
-            width: calc(100% - 60px);
-            z-index: 10;
+            width: 100%;
         }
 
-        .info-overlay h2 {
-            font-size: 1.8rem;
+        .info-content h2 {
+            font-size: 2.5rem;
             font-weight: 900;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -340,11 +332,11 @@
         }
 
         .info-list li {
-            padding: 12px 0;
-            font-size: 1rem;
+            padding: 15px 0;
+            font-size: 1.1rem;
             color: var(--text-dark);
             position: relative;
-            padding-left: 35px;
+            padding-left: 40px;
             border-bottom: 1px solid #f0f0f0;
             transition: all 0.3s ease;
         }
@@ -357,22 +349,23 @@
             content: '✓';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 15px;
             color: var(--accent-gold);
             font-weight: bold;
-            width: 22px;
-            height: 22px;
+            font-size: 1.3rem;
+            width: 25px;
+            height: 25px;
             background: rgba(184, 134, 11, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .info-list li:hover {
             background: rgba(184, 134, 11, 0.05);
-            padding-left: 40px;
+            padding-left: 45px;
         }
 
         .info-list li strong {
@@ -1132,7 +1125,7 @@
             cursor: pointer;
         }
 
-        /* Responsive Design - MANTÉM APARÊNCIA DO DESKTOP */
+        /* Responsive Design - LAYOUT ORIGINAL PRESERVADO */
         @media (max-width: 768px) {
             body {
                 width: 100%;
@@ -1173,12 +1166,14 @@
                 font-size: 0.8rem;
             }
 
-            /* Hero mobile - MANTÉM PROPORÇÃO */
+            /* Hero mobile - IMAGEM AJUSTADA */
             .hero {
                 background-attachment: scroll;
                 min-height: 100vh;
-                background-size: cover;
-                background-position: center;
+                background-size: contain;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-color: #f8f9fa;
             }
 
             .associe-se-area {
@@ -1187,62 +1182,58 @@
                 height: 70px;
             }
 
-            /* Detailed Info Mobile - LAYOUT SOBREPOSTO MANTIDO */
+            /* Detailed Info Mobile - LAYOUT LADO A LADO PRESERVADO */
             .detailed-info {
-                padding: 60px 0;
+                padding: 40px 0;
                 width: 100%;
             }
 
             .detailed-info-content {
-                min-height: 400px;
-                width: 100%;
-            }
-
-            .doctor-image-container {
-                height: 400px;
+                grid-template-columns: 1fr;
+                gap: 30px;
                 width: 100%;
             }
 
             .doctor-image {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                order: 1;
+            }
+
+            .doctor-image img {
+                width: 100%;
+                height: 300px;
+                object-fit: contain;
                 object-position: center;
+                background: #f8f9fa;
             }
 
-            /* Card sobreposto - MANTÉM DESIGN DESKTOP */
-            .info-overlay {
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                transform: translateY(-50%);
-                max-width: 280px;
-                width: calc(100% - 30px);
-                padding: 20px;
-                z-index: 20;
+            .info-content {
+                padding: 25px;
+                width: 100%;
+                order: 2;
             }
 
-            .info-overlay h2 {
-                font-size: 1.4rem;
-                margin-bottom: 1.2rem;
+            .info-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
             }
 
             .info-list li {
-                font-size: 0.9rem;
-                padding: 10px 0;
-                padding-left: 30px;
+                font-size: 0.95rem;
+                padding: 12px 0;
+                padding-left: 35px;
             }
 
             .info-list li::before {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
                 width: 20px;
                 height: 20px;
-                top: 10px;
+                top: 12px;
             }
 
-            /* Stats Mobile - PROPORCIONAIS */
+            /* Stats Mobile */
             .stats {
-                padding: 50px 0;
+                padding: 40px 0;
                 width: 100%;
             }
 
@@ -1262,9 +1253,9 @@
                 font-size: 0.85rem;
             }
 
-            /* Benefits Mobile - PROPORCIONAIS */
+            /* Benefits Mobile */
             .benefits {
-                padding: 60px 0;
+                padding: 50px 0;
                 width: 100%;
             }
 
@@ -1298,9 +1289,9 @@
                 font-size: 0.9rem;
             }
 
-            /* Pricing Mobile - PROPORCIONAIS */
+            /* Pricing Mobile */
             .pricing {
-                padding: 60px 0;
+                padding: 50px 0;
                 width: 100%;
             }
 
@@ -1348,9 +1339,9 @@
                 gap: 8px;
             }
 
-            /* Testimonials Mobile - PROPORCIONAIS */
+            /* Testimonials Mobile */
             .testimonials {
-                padding: 60px 0;
+                padding: 50px 0;
                 width: 100%;
             }
 
@@ -1379,9 +1370,9 @@
                 font-size: 0.85rem;
             }
 
-            /* Final CTA Mobile - PROPORCIONAIS */
+            /* Final CTA Mobile */
             .final-cta {
-                padding: 60px 0;
+                padding: 50px 0;
                 width: 100%;
             }
 
@@ -1401,16 +1392,16 @@
                 font-size: 1rem;
             }
 
-            /* Footer Mobile - PROPORCIONAIS */
+            /* Footer Mobile */
             footer {
-                padding: 50px 0 25px;
+                padding: 40px 0 25px;
                 width: 100%;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                margin-bottom: 30px;
+                gap: 25px;
+                margin-bottom: 25px;
                 width: 100%;
             }
 
@@ -1423,9 +1414,9 @@
                 font-size: 0.85rem;
             }
 
-            /* Modal Mobile - PROPORCIONAIS */
+            /* Modal Mobile */
             .modal-content {
-                padding: 30px 20px;
+                padding: 25px 20px;
                 margin: 15px;
                 max-width: 95%;
                 width: 95%;
@@ -1491,7 +1482,7 @@
                 margin: 15px 0;
             }
             
-                        .nav-menu a {
+            .nav-menu a {
                 font-size: 1.1rem;
                 padding: 10px 20px;
                 border-radius: 20px;
@@ -1502,7 +1493,7 @@
                 background: rgba(184, 134, 11, 0.2);
             }
 
-            /* Floating WhatsApp Mobile - PROPORCIONAIS */
+            /* Floating WhatsApp Mobile */
             .floating-whatsapp {
                 width: 50px;
                 height: 50px;
@@ -1512,44 +1503,52 @@
             }
         }
 
-        @media (max-width: 480px) {
-            /* Extra small mobile - MANTÉM PROPORÇÕES */
+                @media (max-width: 480px) {
+            /* Extra small mobile - IMAGENS AINDA MAIS AJUSTADAS */
             .container {
                 padding: 0 10px;
             }
 
+            /* Hero - IMAGEM COMPLETA SEM CORTES */
             .hero {
                 min-height: 100vh;
+                background-size: contain;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-color: #f8f9fa;
             }
 
             .associe-se-area {
                 width: 150px;
                 height: 60px;
-                bottom: 12%;
+                bottom: 10%;
             }
 
+            /* Detailed Info - IMAGEM DO MÉDICO SEM CORTES */
             .detailed-info {
-                padding: 40px 0;
+                padding: 30px 0;
             }
 
-            .doctor-image-container {
-                height: 350px;
+            .doctor-image img {
+                height: 250px;
+                object-fit: contain;
+                object-position: center;
+                background: #f8f9fa;
+                border: 1px solid #e9ecef;
             }
 
-            .info-overlay {
-                right: 10px;
-                max-width: 250px;
-                padding: 15px;
+            .info-content {
+                padding: 20px;
             }
 
-            .info-overlay h2 {
-                font-size: 1.2rem;
+            .info-content h2 {
+                font-size: 1.5rem;
             }
 
             .info-list li {
-                font-size: 0.8rem;
-                padding: 8px 0;
-                padding-left: 25px;
+                font-size: 0.85rem;
+                padding: 10px 0;
+                padding-left: 30px;
             }
 
             .stats-container {
@@ -1659,26 +1658,26 @@
         <div class="associe-se-area" id="associe-se-btn"></div>
     </section>
 
-    <!-- NOVA SEÇÃO - Informações com Médico SOBREPOSTO -->
+    <!-- SEÇÃO - Informações Detalhadas com Médico - LAYOUT ORIGINAL -->
     <section class="detailed-info" id="detailed-info">
         <div class="container">
             <div class="detailed-info-content" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Container da imagem do médico -->
-                <div class="doctor-image-container">
-                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg" alt="Médico sorridente" class="doctor-image" loading="lazy">
+                <!-- Imagem do Médico -->
+                <div class="doctor-image" data-aos="fade-right" data-aos-delay="200">
+                    <img src="https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%203.jpg" alt="Médico sorridente" loading="lazy">
+                </div>
+                
+                <!-- Informações Detalhadas -->
+                <div class="info-content" data-aos="fade-left" data-aos-delay="400">
+                    <h2>Seus benefícios com o Clube</h2>
                     
-                    <!-- Card de informações sobreposto -->
-                    <div class="info-overlay" data-aos="fade-left" data-aos-delay="400">
-                        <h2>Seus benefícios com o Clube</h2>
-                        
-                        <ul class="info-list">
-                            <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
-                            <li><strong>Exames a partir de R$ 5,25</strong></li>
-                            <li><strong>Medicamentos com até 90% de desconto</strong></li>
-                            <li><strong>Odontologia e estética com até 30% de desconto</strong></li>
-                            <li><strong>E muito mais...</strong></li>
-                        </ul>
-                    </div>
+                    <ul class="info-list">
+                        <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
+                        <li><strong>Exames a partir de R$ 5,25</strong></li>
+                        <li><strong>Medicamentos com até 90% de desconto</strong></li>
+                        <li><strong>Odontologia e estética com até 30% de desconto</strong></li>
+                        <li><strong>E muito mais...</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
