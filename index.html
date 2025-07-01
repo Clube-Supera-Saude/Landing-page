@@ -363,117 +363,6 @@
             font-weight: 700;
         }
 
-        /* Nova seção de informações rápidas - AJUSTADA PARA MOBILE */
-        .quick-info {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quick-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
-        }
-
-        .quick-info-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .quick-info h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 2.5rem;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 2.5rem;
-        }
-
-        .info-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(184, 134, 11, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .info-item:hover::before {
-            left: 100%;
-        }
-
-        .info-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent-gold);
-        }
-
-        .info-item i {
-            font-size: 2rem;
-            color: var(--accent-gold);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .info-item h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--white);
-            line-height: 1.3;
-        }
-
-        .info-item p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        .e-muito-mais {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            text-align: center;
-            margin-top: 1.5rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
         /* Floating WhatsApp - REDONDO E MENOR */
         .floating-whatsapp {
             position: fixed;
@@ -1244,10 +1133,12 @@
                 font-size: 0.8rem;
             }
 
-            /* Hero mobile adjustments */
+            /* Hero mobile adjustments - MELHORADO */
             .hero {
                 background-attachment: scroll;
-                min-height: 70vh;
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center center;
             }
 
             .associe-se-area {
@@ -1256,7 +1147,7 @@
                 height: 70px;
             }
 
-            /* Detailed Info Mobile */
+            /* Detailed Info Mobile - MELHORADO */
             .detailed-info {
                 padding: 50px 0;
             }
@@ -1267,7 +1158,9 @@
             }
 
             .doctor-image img {
-                height: 300px;
+                height: 400px;
+                object-fit: cover;
+                object-position: center;
             }
 
             .info-content {
@@ -1283,45 +1176,6 @@
                 font-size: 0.95rem;
                 padding: 12px 0;
                 padding-left: 35px;
-            }
-
-            /* Quick Info Mobile */
-            .quick-info {
-                padding: 40px 0;
-            }
-
-            .quick-info h2 {
-                font-size: 1.6rem;
-                margin-bottom: 2rem;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                margin-bottom: 2rem;
-            }
-
-            .info-item {
-                padding: 20px;
-            }
-
-            .info-item i {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-
-            .info-item h3 {
-                font-size: 1rem;
-                margin-bottom: 6px;
-            }
-
-            .info-item p {
-                font-size: 0.85rem;
-            }
-
-            .e-muito-mais {
-                font-size: 1.2rem;
-                margin-top: 1rem;
             }
 
             /* Stats Mobile */
@@ -1486,7 +1340,7 @@
 
             .footer-section h3 {
                 font-size: 1.1rem;
-                                margin-bottom: 15px;
+                margin-bottom: 15px;
             }
 
             .footer-section p, .footer-section a {
@@ -1584,29 +1438,15 @@
         @media (max-width: 480px) {
             /* Extra small mobile adjustments */
             .hero {
-                min-height: 60vh;
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center;
             }
 
             .associe-se-area {
                 width: 180px;
                 height: 60px;
                 bottom: 12%;
-            }
-
-            .quick-info h2 {
-                font-size: 1.4rem;
-            }
-
-            .info-item {
-                padding: 15px;
-            }
-
-            .info-item h3 {
-                font-size: 0.9rem;
-            }
-
-            .info-item p {
-                font-size: 0.8rem;
             }
 
             .stats-container {
@@ -1664,7 +1504,7 @@
             }
 
             .doctor-image img {
-                height: 250px;
+                height: 350px;
             }
 
             .info-content {
@@ -1675,7 +1515,7 @@
                 font-size: 1.6rem;
             }
 
-            .info-list li {
+                        .info-list li {
                 font-size: 0.9rem;
                 padding: 10px 0;
                 padding-left: 30px;
@@ -1731,71 +1571,25 @@
         <div class="associe-se-area" id="associe-se-btn"></div>
     </section>
 
-    <!-- Nova Seção de Informações Rápidas -->
-    <section class="quick-info">
-        <div class="container">
-            <div class="quick-info-content" data-aos="fade-up">
-                <h2>Vantagens Exclusivas</h2>
-                
-                <div class="info-grid">
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Consultas a partir de R$ 59,90</h3>
-                        <p>+ retorno gratuito</p>
-                    </div>
-                    
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-microscope"></i>
-                        <h3>Exames a partir de R$ 5,25</h3>
-                        <p>Laboratórios credenciados</p>
-                    </div>
-                    
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-pills"></i>
-                        <h3>Medicamentos com até 90% de desconto</h3>
-                        <p>Principais farmácias do Brasil</p>
-                    </div>
-                    
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-tooth"></i>
-                        <h3>Odontologia e estética com até 30% de desconto</h3>
-                        <p>Tratamentos completos</p>
-                    </div>
-                </div>
-                
-                <div class="e-muito-mais" data-aos="fade-up" data-aos-delay="500">
-                    ✨ E muito mais...
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- NOVA SEÇÃO - Informações Detalhadas com Médico -->
     <section class="detailed-info" id="detailed-info">
         <div class="container">
             <div class="detailed-info-content" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Imagem do Médico -->
+                <!-- Imagem do Médico - NOVA IMAGEM MAIS SIMPÁTICA -->
                 <div class="doctor-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Médico sorridente" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Médico sorridente" loading="lazy">
                 </div>
                 
-                <!-- Informações Detalhadas -->
+                <!-- Informações Detalhadas - SIMPLIFICADAS -->
                 <div class="info-content" data-aos="fade-left" data-aos-delay="400">
                     <h2>Seus Benefícios Detalhados</h2>
                     
                     <ul class="info-list">
                         <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
-                        <li><strong>Exames a partir de R$ 5,25</strong> em laboratórios credenciados</li>
-                        <li><strong>Medicamentos com até 90% de desconto</strong> nas principais farmácias</li>
-                        <li><strong>Odontologia e estética com até 30% de desconto</strong> em tratamentos completos</li>
-                        <li><strong>Telemedicina 24h</strong> com médicos especialistas</li>
-                        <li><strong>Desconto em academias</strong> e atividades físicas</li>
-                        <li><strong>Educação com até 87% de desconto</strong> em cursos e graduações</li>
-                        <li><strong>Lazer e gastronomia</strong> com preços especiais</li>
-                        <li><strong>Mais de 500 parceiros ativos</strong> em todo o Brasil</li>
-                        <li><strong>Sem carência</strong> - ativação imediata</li>
-                        <li><strong>Carteirinha digital</strong> no seu celular</li>
-                        <li><strong>Suporte 24h</strong> para toda família</li>
+                        <li><strong>Exames a partir de R$ 5,25</strong></li>
+                        <li><strong>Medicamentos com até 90% de desconto</strong></li>
+                        <li><strong>Odontologia e estética com até 30% de desconto</strong></li>
+                        <li><strong>E muito mais...</strong></li>
                     </ul>
                 </div>
             </div>
@@ -2129,7 +1923,7 @@
         }
 
         // Abrir modal quando clicar na área "Associe-se"
-                associeSeBtn.addEventListener('click', function() {
+        associeSeBtn.addEventListener('click', function() {
             if (modalOverlay.classList.contains('hidden')) {
                 showModal();
                 
@@ -2408,7 +2202,7 @@
         const preloadImages = [
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png',
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg',
-            'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+            'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
         ];
 
         preloadImages.forEach(src => {
