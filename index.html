@@ -37,18 +37,6 @@
     fbq('init', 'SEU_FACEBOOK_PIXEL_ID');
     fbq('track', 'PageView');
     </script>
-
-    <!-- Hotjar -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:SEU_HOTJAR_ID,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
     
     <style>
         * {
@@ -112,13 +100,13 @@
         }
 
         .loader-logo {
-            width: 80px;
-            height: 80px;
-            border: 4px solid var(--accent-gold);
-            border-top: 4px solid transparent;
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--accent-gold);
+            border-top: 3px solid transparent;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
         }
 
         @keyframes spin {
@@ -131,7 +119,7 @@
             background: rgba(26, 31, 76, 0.95);
             backdrop-filter: blur(20px);
             color: var(--white);
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -154,16 +142,16 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-img {
-            height: 60px;
+            height: 50px;
             width: auto;
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--white);
-            padding: 8px;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+            padding: 6px;
+            box-shadow: 0 3px 12px rgba(184, 134, 11, 0.3);
             transition: transform 0.3s ease;
             object-fit: contain;
         }
@@ -173,7 +161,7 @@
         }
 
         .logo-text {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 800;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -183,7 +171,7 @@
 
         .nav-menu {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             list-style: none;
         }
 
@@ -191,6 +179,7 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -213,11 +202,12 @@
         .cta-header {
             background: var(--gradient-gold);
             color: var(--white);
-            padding: 12px 30px;
+            padding: 10px 25px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.9rem;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
@@ -241,8 +231,8 @@
         }
 
         .cta-header:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
         }
 
         /* Hero Section - APENAS IMAGEM */
@@ -258,7 +248,7 @@
             cursor: pointer;
         }
 
-        /* Área clicável invisível para o botão "Associe-se" - REPOSICIONADA */
+        /* Área clicável invisível para o botão "Associe-se" */
         .associe-se-area {
             position: absolute;
             bottom: 20%;
@@ -269,19 +259,115 @@
             cursor: pointer;
             z-index: 10;
             transition: transform 0.3s ease;
-            /* Para debug - remova depois */
-            /* border: 2px solid red; */
         }
 
         .associe-se-area:hover {
             transform: translateX(-50%) scale(1.05);
         }
 
-        /* Nova seção de informações rápidas */
+        /* NOVA SEÇÃO - Informações Detalhadas com Médico */
+        .detailed-info {
+            background: var(--white);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .detailed-info-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            position: relative;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(26, 31, 76, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .doctor-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .info-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.1);
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .info-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .info-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 15px 0;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 40px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.3rem;
+            width: 25px;
+            height: 25px;
+            background: rgba(184, 134, 11, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .info-list li:hover {
+            background: rgba(184, 134, 11, 0.05);
+            padding-left: 45px;
+        }
+
+        .info-list li strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* Nova seção de informações rápidas - AJUSTADA PARA MOBILE */
         .quick-info {
             background: var(--gradient-primary);
             color: var(--white);
-            padding: 80px 0;
+            padding: 60px 0;
             position: relative;
             overflow: hidden;
         }
@@ -305,9 +391,9 @@
         }
 
         .quick-info h2 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -316,16 +402,16 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 2.5rem;
         }
 
         .info-item {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 15px;
             border: 1px solid rgba(184, 134, 11, 0.3);
             transition: all 0.3s ease;
             position: relative;
@@ -354,31 +440,32 @@
         }
 
         .info-item i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--accent-gold);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .info-item h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--white);
+            line-height: 1.3;
         }
 
         .info-item p {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             opacity: 0.9;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .e-muito-mais {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-gold);
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -387,19 +474,19 @@
             50% { opacity: 0.7; }
         }
 
-        /* Floating WhatsApp - REDONDO */
+        /* Floating WhatsApp - REDONDO E MENOR */
         .floating-whatsapp {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: var(--white);
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
             z-index: 1000;
             animation: floatWhatsApp 3s ease-in-out infinite;
             transition: all 0.3s ease;
@@ -410,12 +497,12 @@
 
         .floating-whatsapp:hover {
             transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes floatWhatsApp {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         /* Modal Pop-up - OBRIGATÓRIO */
@@ -445,10 +532,10 @@
 
         .modal-content {
             background: var(--white);
-            padding: 50px;
-            border-radius: 25px;
+            padding: 40px;
+            border-radius: 20px;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-            max-width: 500px;
+            max-width: 450px;
             width: 90%;
             position: relative;
             animation: slideUp 0.6s ease;
@@ -468,15 +555,15 @@
 
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 25px;
+            top: 15px;
+            right: 20px;
             background: none;
             border: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #999;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: none; /* Ocultar o X para tornar obrigatório */
+            display: none;
         }
 
         .modal-close:hover {
@@ -486,32 +573,34 @@
 
         .modal-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
 
         .modal-subtitle {
             text-align: center;
             color: var(--text-dark);
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
             opacity: 0.8;
+            line-height: 1.4;
         }
 
         .urgency-banner {
             background: var(--gradient-gold);
             color: var(--white);
-            padding: 15px;
-            border-radius: 15px;
+            padding: 12px;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             animation: urgencyPulse 2s ease-in-out infinite;
         }
 
@@ -521,23 +610,23 @@
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .form-group input {
             width: 100%;
-            padding: 18px 20px;
+            padding: 15px 18px;
             border: 2px solid #e1e5e9;
-            border-radius: 15px;
-            font-size: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             background: var(--white);
             color: var(--text-dark);
@@ -547,7 +636,7 @@
             outline: none;
             border-color: var(--accent-gold);
             box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .form-group input::placeholder {
@@ -559,20 +648,20 @@
             width: 100%;
             background: var(--gradient-gold);
             color: var(--white);
-            padding: 20px;
+            padding: 16px;
             border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .submit-btn::before {
@@ -591,8 +680,8 @@
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4);
         }
 
         .submit-btn:disabled {
@@ -604,53 +693,55 @@
         .form-success {
             background: #d4edda;
             color: #155724;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
             border: 1px solid #c3e6cb;
             display: none;
             text-align: center;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .form-success i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+            margin-right: 8px;
+            font-size: 1rem;
         }
 
         .form-error {
             background: #f8d7da;
             color: #721c24;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
             border: 1px solid #f5c6cb;
             display: none;
             text-align: center;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .form-error i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+            margin-right: 8px;
+            font-size: 1rem;
         }
 
-        /* Stats Section */
+        /* Stats Section - AJUSTADA */
         .stats {
             background: var(--white);
-            padding: 100px 0;
+            padding: 60px 0;
             position: relative;
             z-index: 3;
         }
 
         .stats-container {
             background: var(--white);
-            border-radius: 30px;
+            border-radius: 25px;
             box-shadow: var(--shadow-hover);
-            padding: 80px 60px;
+            padding: 50px 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
             text-align: center;
             border: 1px solid rgba(184, 134, 11, 0.1);
         }
@@ -662,58 +753,47 @@
         .stat-item::after {
             content: '';
             position: absolute;
-            bottom: -20px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: var(--gradient-gold);
             border-radius: 2px;
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             counter-reset: number;
             animation: countUp 2s ease-out;
         }
 
         .stat-label {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--text-dark);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* Benefits Section */
+        /* Benefits Section - AJUSTADA */
         .benefits {
-            padding: 120px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             position: relative;
         }
 
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23b8860b" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
         .benefits h2 {
             text-align: center;
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -724,112 +804,79 @@
         .benefits h2::after {
             content: '';
             position: absolute;
-            bottom: -20px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background: var(--gradient-gold);
             border-radius: 2px;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             position: relative;
             z-index: 2;
         }
 
         .benefit-card {
             background: var(--white);
-            padding: 50px;
-            border-radius: 25px;
+            padding: 35px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.08);
+            box-shadow: 0 12px 35px rgba(26, 31, 76, 0.08);
             transition: all 0.4s ease;
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
         }
 
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.05), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .benefit-card:hover::before {
-            left: 100%;
-        }
-
         .benefit-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(26, 31, 76, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(26, 31, 76, 0.15);
             border-color: var(--accent-gold);
         }
 
         .benefit-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
-            animation: iconPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
 
         .benefit-card h3 {
             color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
         }
 
         .benefit-card p {
             color: var(--text-dark);
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.6;
             opacity: 0.9;
         }
 
-        /* Pricing Section */
+        /* Pricing Section - AJUSTADA */
         .pricing {
-            padding: 120px 0;
+            padding: 80px 0;
             background: var(--gradient-primary);
             color: var(--white);
             position: relative;
             overflow: hidden;
         }
 
-        .pricing::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
-        }
-
         .pricing h2 {
             text-align: center;
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             position: relative;
             z-index: 2;
         }
@@ -837,20 +884,20 @@
         .pricing h2::after {
             content: '';
             position: absolute;
-            bottom: -20px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background: var(--gradient-gold);
             border-radius: 2px;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
@@ -859,10 +906,10 @@
         .pricing-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 25px;
+            padding: 35px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
             border: 2px solid rgba(184, 134, 11, 0.2);
             position: relative;
@@ -875,76 +922,76 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 4px;
             background: var(--gradient-gold);
         }
 
         .pricing-card.featured {
-            transform: scale(1.08);
+            transform: scale(1.05);
             border-color: var(--accent-gold);
-            box-shadow: 0 30px 80px rgba(184, 134, 11, 0.3);
+            box-shadow: 0 25px 70px rgba(184, 134, 11, 0.3);
         }
 
         .pricing-card.featured::after {
             content: 'MAIS POPULAR';
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--gradient-gold);
             color: var(--white);
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
         }
 
         .pricing-card.featured:hover {
-            transform: scale(1.08) translateY(-10px);
+            transform: scale(1.05) translateY(-8px);
         }
 
         .pricing-card h3 {
             color: var(--primary-blue);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .pricing-card .price {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .pricing-card .period {
             color: var(--text-dark);
-            margin-bottom: 35px;
-            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-size: 1rem;
             opacity: 0.8;
         }
 
         .pricing-card ul {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-align: left;
         }
 
         .pricing-card li {
-            padding: 12px 0;
+            padding: 10px 0;
             color: var(--text-dark);
             position: relative;
-            padding-left: 35px;
-            font-size: 1.1rem;
+            padding-left: 30px;
+            font-size: 0.95rem;
         }
 
         .pricing-card li::before {
@@ -953,98 +1000,68 @@
             left: 0;
             color: var(--accent-gold);
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
 
         .whatsapp-btn {
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: var(--white);
-            padding: 20px 45px;
+            padding: 15px 35px;
             border: none;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
             position: relative;
             overflow: hidden;
         }
 
-        .whatsapp-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .whatsapp-btn:hover::before {
-            left: 100%;
-        }
-
         .whatsapp-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
         .cta-button {
             background: var(--gradient-gold);
             color: var(--white);
-            padding: 20px 45px;
+            padding: 15px 35px;
             border: none;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.5);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
             position: relative;
             overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
         .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(184, 134, 11, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(184, 134, 11, 0.6);
         }
 
-        /* Testimonials */
+        /* Testimonials - AJUSTADA */
         .testimonials {
-            padding: 120px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         .testimonials h2 {
             text-align: center;
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1055,27 +1072,27 @@
         .testimonials h2::after {
             content: '';
             position: absolute;
-            bottom: -20px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background: var(--gradient-gold);
             border-radius: 2px;
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .testimonial {
             background: var(--white);
-            padding: 50px;
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(26, 31, 76, 0.08);
-            border-left: 6px solid var(--accent-gold);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(26, 31, 76, 0.08);
+            border-left: 5px solid var(--accent-gold);
             transition: all 0.4s ease;
             position: relative;
         }
@@ -1083,53 +1100,41 @@
         .testimonial::before {
             content: '"';
             position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 4rem;
+            top: 15px;
+            right: 25px;
+            font-size: 3rem;
             color: var(--accent-gold);
             opacity: 0.3;
             font-family: serif;
         }
 
         .testimonial:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(26, 31, 76, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(26, 31, 76, 0.12);
         }
 
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 25px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
             color: var(--text-dark);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .testimonial-author {
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
 
-        /* Final CTA */
+        /* Final CTA - AJUSTADA */
         .final-cta {
-            padding: 120px 0;
+            padding: 80px 0;
             background: var(--gradient-primary);
             color: var(--white);
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
         }
 
         .final-cta-content {
@@ -1138,47 +1143,47 @@
         }
 
         .final-cta h2 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .final-cta p {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
         }
 
         .urgency {
             background: var(--gradient-gold);
-            padding: 30px;
-            border-radius: 20px;
-            margin: 50px 0;
-            font-size: 1.4rem;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+            font-size: 1.2rem;
             font-weight: 700;
-            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
             animation: urgencyPulse 2s ease-in-out infinite;
         }
 
-        /* Footer */
+        /* Footer - AJUSTADA */
         footer {
             background: var(--primary-blue);
             color: var(--white);
-            padding: 80px 0 40px;
+            padding: 60px 0 30px;
             position: relative;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
             color: var(--accent-gold);
-            margin-bottom: 25px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
@@ -1187,13 +1192,14 @@
             text-decoration: none;
             opacity: 0.9;
             transition: all 0.3s ease;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .footer-section a:hover {
             opacity: 1;
             color: var(--accent-gold);
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         /* Mobile Menu */
@@ -1202,12 +1208,16 @@
             background: none;
             border: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
         }
 
-        /* Responsive Design */
+        /* Responsive Design - MELHORADO */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
             .nav-menu {
                 display: none;
             }
@@ -1218,63 +1228,326 @@
             
             .header-content {
                 flex-wrap: wrap;
-                gap: 20px;
+                gap: 15px;
             }
             
             .logo-img {
-                height: 50px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .cta-header {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+
+            /* Hero mobile adjustments */
+            .hero {
+                background-attachment: scroll;
+                min-height: 70vh;
+            }
+
+            .associe-se-area {
+                bottom: 15%;
+                width: 200px;
+                height: 70px;
+            }
+
+            /* Detailed Info Mobile */
+            .detailed-info {
+                padding: 50px 0;
+            }
+
+            .detailed-info-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .doctor-image img {
+                height: 300px;
+            }
+
+            .info-content {
+                padding: 25px;
+            }
+
+            .info-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .info-list li {
+                font-size: 0.95rem;
+                padding: 12px 0;
+                padding-left: 35px;
+            }
+
+            /* Quick Info Mobile */
+            .quick-info {
+                padding: 40px 0;
             }
 
             .quick-info h2 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
             }
 
             .info-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
+                margin-bottom: 2rem;
             }
 
             .info-item {
+                padding: 20px;
+            }
+
+            .info-item i {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .info-item h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .info-item p {
+                font-size: 0.85rem;
+            }
+
+            .e-muito-mais {
+                font-size: 1.2rem;
+                margin-top: 1rem;
+            }
+
+            /* Stats Mobile */
+            .stats {
+                padding: 40px 0;
+            }
+
+            .stats-container {
+                padding: 30px 20px;
+                gap: 25px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+                margin-bottom: 8px;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            /* Benefits Mobile */
+            .benefits {
+                padding: 50px 0;
+            }
+
+            .benefits h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .benefit-card {
                 padding: 25px;
             }
-            
-            .stats-container {
-                padding: 60px 30px;
-                gap: 30px;
-            }
-            
-            .benefits h2, .pricing h2, .testimonials h2, .final-cta h2 {
+
+            .benefit-icon {
                 font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
-            
+
+            .benefit-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .benefit-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Pricing Mobile */
+            .pricing {
+                padding: 50px 0;
+            }
+
+            .pricing h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing-card {
+                padding: 25px;
+            }
+
             .pricing-card.featured {
                 transform: none;
             }
-            
+
             .pricing-card.featured:hover {
-                transform: translateY(-10px);
-            }
-            
-            .benefits-grid, .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                padding: 30px 25px;
-                margin: 20px;
+                transform: translateY(-6px);
             }
 
+            .pricing-card .price {
+                font-size: 2.2rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .pricing-card li {
+                font-size: 0.85rem;
+                padding: 8px 0;
+                padding-left: 25px;
+            }
+
+            .whatsapp-btn, .cta-button {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                gap: 8px;
+            }
+
+            /* Testimonials Mobile */
+            .testimonials {
+                padding: 50px 0;
+            }
+
+            .testimonials h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial {
+                padding: 25px;
+            }
+
+            .testimonial-text {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .testimonial-author {
+                font-size: 0.85rem;
+            }
+
+            /* Final CTA Mobile */
+            .final-cta {
+                padding: 50px 0;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .urgency {
+                padding: 20px;
+                margin: 30px 0;
+                font-size: 1rem;
+            }
+
+            /* Footer Mobile */
+            footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 25px;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+                                margin-bottom: 15px;
+            }
+
+            .footer-section p, .footer-section a {
+                font-size: 0.85rem;
+            }
+
+            /* Modal Mobile */
+            .modal-content {
+                padding: 25px 20px;
+                margin: 15px;
+                max-width: 95%;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .modal-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .urgency-banner {
+                padding: 10px;
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 5px;
+            }
+
+            .form-group input {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 14px;
+                font-size: 1rem;
+                gap: 6px;
+            }
+
+            /* Navigation Mobile */
             .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 70px);
                 background: var(--gradient-primary);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                padding-top: 50px;
+                padding-top: 40px;
                 transition: left 0.3s ease;
                 z-index: 999;
             }
@@ -1284,13 +1557,13 @@
             }
             
             .nav-menu li {
-                margin: 20px 0;
+                margin: 15px 0;
             }
             
             .nav-menu a {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 padding: 10px 20px;
-                border-radius: 25px;
+                border-radius: 20px;
                 transition: all 0.3s ease;
             }
             
@@ -1298,50 +1571,114 @@
                 background: rgba(184, 134, 11, 0.2);
             }
 
-            /* Hero mobile adjustments */
-            .hero {
-                background-attachment: scroll;
-            }
-
-            .associe-se-area {
-                bottom: 15%;
-                width: 250px;
-                height: 80px;
+            /* Floating WhatsApp Mobile */
+            .floating-whatsapp {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                bottom: 15px;
+                right: 15px;
             }
         }
 
         @media (max-width: 480px) {
-            .whatsapp-btn, .cta-button {
-                padding: 18px 35px;
-                font-size: 1.1rem;
-            }
-            
-            .benefit-card, .testimonial, .pricing-card {
-                padding: 35px;
+            /* Extra small mobile adjustments */
+            .hero {
+                min-height: 60vh;
             }
 
-            .modal-content {
-                padding: 25px 20px;
-            }
-
-            .modal-title {
-                font-size: 1.8rem;
+            .associe-se-area {
+                width: 180px;
+                height: 60px;
+                bottom: 12%;
             }
 
             .quick-info h2 {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
 
             .info-item {
-                padding: 20px;
+                padding: 15px;
             }
 
             .info-item h3 {
-                font-size: 1.2rem;
+                font-size: 0.9rem;
             }
 
             .info-item p {
-                font-size: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                padding: 25px 15px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .benefits h2, .pricing h2, .testimonials h2, .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .benefit-card, .testimonial, .pricing-card {
+                padding: 20px;
+            }
+
+            .benefit-icon {
+                font-size: 2rem;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .benefit-card p {
+                font-size: 0.85rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2rem;
+            }
+
+            .whatsapp-btn, .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .modal-content {
+                padding: 20px 15px;
+            }
+
+            .modal-title {
+                font-size: 1.3rem;
+            }
+
+            .detailed-info-content {
+                gap: 20px;
+            }
+
+            .doctor-image img {
+                height: 250px;
+            }
+
+            .info-content {
+                padding: 20px;
+            }
+
+            .info-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .info-list li {
+                font-size: 0.9rem;
+                padding: 10px 0;
+                padding-left: 30px;
             }
         }
 
@@ -1373,6 +1710,7 @@
                 </div>
                 <nav>
                     <ul class="nav-menu">
+                        <li><a href="#detailed-info">Serviços</a></li>
                         <li><a href="#benefits">Benefícios</a></li>
                         <li><a href="#pricing">Planos</a></li>
                         <li><a href="#testimonials">Depoimentos</a></li>
@@ -1389,7 +1727,7 @@
 
     <!-- Hero Section - APENAS IMAGEM -->
     <section class="hero" id="hero">
-        <!-- Área clicável invisível para o botão "Associe-se" - REPOSICIONADA -->
+        <!-- Área clicável invisível para o botão "Associe-se" -->
         <div class="associe-se-area" id="associe-se-btn"></div>
     </section>
 
@@ -1397,7 +1735,7 @@
     <section class="quick-info">
         <div class="container">
             <div class="quick-info-content" data-aos="fade-up">
-                                <h2>Vantagens Exclusivas</h2>
+                <h2>Vantagens Exclusivas</h2>
                 
                 <div class="info-grid">
                     <div class="info-item" data-aos="fade-up" data-aos-delay="100">
@@ -1427,6 +1765,38 @@
                 
                 <div class="e-muito-mais" data-aos="fade-up" data-aos-delay="500">
                     ✨ E muito mais...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO - Informações Detalhadas com Médico -->
+    <section class="detailed-info" id="detailed-info">
+        <div class="container">
+            <div class="detailed-info-content" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Imagem do Médico -->
+                <div class="doctor-image" data-aos="fade-right" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Médico sorridente" loading="lazy">
+                </div>
+                
+                <!-- Informações Detalhadas -->
+                <div class="info-content" data-aos="fade-left" data-aos-delay="400">
+                    <h2>Seus Benefícios Detalhados</h2>
+                    
+                    <ul class="info-list">
+                        <li><strong>Consultas a partir de R$ 59,90</strong> + retorno gratuito</li>
+                        <li><strong>Exames a partir de R$ 5,25</strong> em laboratórios credenciados</li>
+                        <li><strong>Medicamentos com até 90% de desconto</strong> nas principais farmácias</li>
+                        <li><strong>Odontologia e estética com até 30% de desconto</strong> em tratamentos completos</li>
+                        <li><strong>Telemedicina 24h</strong> com médicos especialistas</li>
+                        <li><strong>Desconto em academias</strong> e atividades físicas</li>
+                        <li><strong>Educação com até 87% de desconto</strong> em cursos e graduações</li>
+                        <li><strong>Lazer e gastronomia</strong> com preços especiais</li>
+                        <li><strong>Mais de 500 parceiros ativos</strong> em todo o Brasil</li>
+                        <li><strong>Sem carência</strong> - ativação imediata</li>
+                        <li><strong>Carteirinha digital</strong> no seu celular</li>
+                        <li><strong>Suporte 24h</strong> para toda família</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1474,7 +1844,7 @@
                 </button>
             </form>
             
-            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.7; color: var(--text-dark);">
+            <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; opacity: 0.7; color: var(--text-dark);">
                 <i class="fas fa-lock"></i> Seus dados estão 100% seguros conosco
             </p>
         </div>
@@ -1642,7 +2012,7 @@
                     </a>
                 </div>
                 
-                <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.9;">
+                <p style="margin-top: 30px; font-size: 1rem; opacity: 0.9;">
                     ✅ Sem carência | ✅ Ativação imediata | ✅ Mais de 500 parceiros | ✅ Suporte 24h
                 </p>
             </div>
@@ -1656,31 +2026,31 @@
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
                     <h3>Clube Supera Saúde</h3>
                     <p>Mais que um convênio de saúde, é um clube de vantagens completo para promover um estilo de vida saudável e acessível para toda sua família.</p>
-                    <div style="margin-top: 20px;">
-                        <a href="https://wa.me/5511996076495" style="color: var(--accent-gold); font-size: 1.5rem; margin-right: 15px;">
+                    <div style="margin-top: 15px;">
+                        <a href="https://wa.me/5511996076495" style="color: var(--accent-gold); font-size: 1.3rem; margin-right: 12px;">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:clubesuperasaude@clubesuperasaude.com.br" style="color: var(--accent-gold); font-size: 1.5rem; margin-right: 15px;">
+                        <a href="mailto:clubesuperasaude@clubesuperasaude.com.br" style="color: var(--accent-gold); font-size: 1.3rem; margin-right: 12px;">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://clubesuperasaude.com.br" style="color: var(--accent-gold); font-size: 1.5rem;">
+                        <a href="https://clubesuperasaude.com.br" style="color: var(--accent-gold); font-size: 1.3rem;">
                             <i class="fas fa-globe"></i>
                         </a>
                     </div>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-phone" style="color: var(--accent-gold); margin-right: 10px;"></i> (11) 99607-6495</p>
-                    <p><i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 10px;"></i> clubesuperasaude@clubesuperasaude.com.br</p>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 10px;"></i> Av. Satélite, 112 | Cidade Satelite<br>Santa Barbara | São Paulo/SP</p>
-                    <p><i class="fas fa-clock" style="color: var(--accent-gold); margin-right: 10px;"></i> Atendimento: Segunda à Sexta, 8h às 18h</p>
+                    <p><i class="fas fa-phone" style="color: var(--accent-gold); margin-right: 8px;"></i> (11) 99607-6495</p>
+                    <p><i class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 8px;"></i> clubesuperasaude@clubesuperasaude.com.br</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-right: 8px;"></i> Av. Satélite, 112 | Cidade Satelite<br>Santa Barbara | São Paulo/SP</p>
+                    <p><i class="fas fa-clock" style="color: var(--accent-gold); margin-right: 8px;"></i> Atendimento: Segunda à Sexta, 8h às 18h</p>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
                     <h3>Links Úteis</h3>
-                    <p><a href="#benefits"><i class="fas fa-heart" style="margin-right: 8px;"></i> Benefícios</a></p>
-                    <p><a href="#pricing"><i class="fas fa-tags" style="margin-right: 8px;"></i> Planos e Preços</a></p>
-                    <p><a href="#testimonials"><i class="fas fa-comments" style="margin-right: 8px;"></i> Depoimentos</a></p>
-                    <p><a href="https://clubesuperasaude.com.br" target="_blank"><i class="fas fa-external-link-alt" style="margin-right: 8px;"></i> Site Oficial</a></p>
+                    <p><a href="#benefits"><i class="fas fa-heart" style="margin-right: 6px;"></i> Benefícios</a></p>
+                    <p><a href="#pricing"><i class="fas fa-tags" style="margin-right: 6px;"></i> Planos e Preços</a></p>
+                    <p><a href="#testimonials"><i class="fas fa-comments" style="margin-right: 6px;"></i> Depoimentos</a></p>
+                    <p><a href="https://clubesuperasaude.com.br" target="_blank"><i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Site Oficial</a></p>
                 </div>
                 <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
                     <h3>Principais Parceiros</h3>
@@ -1689,19 +2059,19 @@
                     <p>🎓 Universidades Credenciadas</p>
                     <p>🏋️ Academias e Spas</p>
                     <p>🍽️ Restaurantes e Lazer</p>
-                    <p style="margin-top: 15px; font-weight: 600; color: var(--accent-gold);">+ de 500 parceiros ativos</p>
+                    <p style="margin-top: 12px; font-weight: 600; color: var(--accent-gold);">+ de 500 parceiros ativos</p>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px;">
-                <p style="opacity: 0.8;">&copy; 2025 Clube Supera Saúde. Todos os direitos reservados.</p>
-                <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 10px;">
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px;">
+                <p style="opacity: 0.8; font-size: 0.85rem;">&copy; 2025 Clube Supera Saúde. Todos os direitos reservados.</p>
+                <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 8px;">
                     Desenvolvido com ❤️ para cuidar da saúde da sua família
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp - REDONDO -->
+    <!-- Floating WhatsApp - REDONDO E MENOR -->
     <a href="https://wa.me/5511996076495?text=Olá! Tenho interesse no Clube Supera Saúde" class="floating-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -1712,10 +2082,10 @@
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 800,
+            duration: 600,
             easing: 'ease-in-out',
             once: true,
-            offset: 100
+            offset: 80
         });
 
         // Loading Screen
@@ -1728,7 +2098,7 @@
                     // MOSTRAR MODAL AUTOMATICAMENTE APÓS CARREGAR
                     showModal();
                 }, 500);
-            }, 1500);
+            }, 1200);
         });
 
         // Modal Functions
@@ -1759,7 +2129,7 @@
         }
 
         // Abrir modal quando clicar na área "Associe-se"
-        associeSeBtn.addEventListener('click', function() {
+                associeSeBtn.addEventListener('click', function() {
             if (modalOverlay.classList.contains('hidden')) {
                 showModal();
                 
@@ -1913,7 +2283,7 @@
         // Header Scroll Effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 80) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -1927,7 +2297,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const headerHeight = document.querySelector('header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    const targetPosition = target.offsetTop - headerHeight - 15;
                     
                     window.scrollTo({
                         top: targetPosition,
@@ -1940,7 +2310,7 @@
         // Counter Animation
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
+            const speed = 150;
 
             counters.forEach(counter => {
                 const updateCount = () => {
@@ -1991,25 +2361,13 @@
         document.querySelectorAll('.whatsapp-btn, .cta-button, .cta-header, .submit-btn').forEach(button => {
             button.addEventListener('mouseenter', function() {
                 if (!this.disabled) {
-                    this.style.transform = 'translateY(-4px) scale(1.02)';
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
                 }
             });
             
             button.addEventListener('mouseleave', function() {
                 if (!this.disabled) {
                     this.style.transform = 'translateY(0) scale(1)';
-                }
-            });
-            
-            button.addEventListener('mousedown', function() {
-                if (!this.disabled) {
-                    this.style.transform = 'translateY(-2px) scale(0.98)';
-                }
-            });
-            
-            button.addEventListener('mouseup', function() {
-                if (!this.disabled) {
-                    this.style.transform = 'translateY(-4px) scale(1.02)';
                 }
             });
         });
@@ -2049,7 +2407,8 @@
         // Preload critical images
         const preloadImages = [
             'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%202.png',
-            'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg'
+            'https://raw.githubusercontent.com/Clube-Supera-Saude/Landing-page/main/larissa%201.jpg',
+            'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
         ];
 
         preloadImages.forEach(src => {
@@ -2064,7 +2423,7 @@
             top: 0;
             left: 0;
             width: 0%;
-            height: 4px;
+            height: 3px;
             background: var(--gradient-gold);
             z-index: 9999;
             transition: width 0.1s ease;
@@ -2190,7 +2549,7 @@
             });
             
             // 7. Rastrear visualização de seções
-            const sections = ['benefits', 'pricing', 'testimonials'];
+            const sections = ['detailed-info', 'benefits', 'pricing', 'testimonials'];
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
